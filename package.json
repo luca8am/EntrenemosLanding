@@ -3,5 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "description": "Landing page pública de Entrenemos",
-  "license": "UNLICENSED"
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@openai/codex": "^0.141.0"
+  }
 }
