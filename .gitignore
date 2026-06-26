@@ -1,26 +1,8 @@
-# Dependencies and builds
-node_modules/
 .next/
-dist/
-build/
+node_modules/
 out/
-
-# Environment and local tooling
-.env
-.env.*
-!.env.example
-.vercel/
-.idea/
-.vscode/
-*.local
-
-# Tests and logs
+dist/
 coverage/
-playwright-report/
-test-results/
 *.log
-
-# OS files
+*.tsbuildinfo
 .DS_Store
-Thumbs.db
-
