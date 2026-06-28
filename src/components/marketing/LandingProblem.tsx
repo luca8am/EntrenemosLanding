@@ -1,3 +1,4 @@
+import React from "react";
 import type { LandingCard } from "@/lib/marketing/landing-types";
 
 interface Props {
@@ -21,7 +22,11 @@ export function LandingProblem({ section }: Props) {
 
       <div className="grid-3">
         {section.cards.map((card, index) => (
-          <article key={card.title} className="card">
+          <article
+            key={card.title}
+            className="card reveal"
+            style={{ "--d": `${index * 90}ms` } as React.CSSProperties}
+          >
             <div className="card-body">
               <span className="card-tag">{`0${index + 1}`}</span>
               <h3>{card.title}</h3>

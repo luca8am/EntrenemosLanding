@@ -1,3 +1,4 @@
+import React from "react";
 import type { LandingCard } from "@/lib/marketing/landing-types";
 
 interface Props {
@@ -25,11 +26,13 @@ export function LandingSolution({ section }: Props) {
             className={[
               "solution-card",
               "card",
+              "reveal",
               card.tone === "accent" ? "accent" : "",
               index === 0 ? "plan" : index === 1 ? "train" : "progress",
             ]
               .filter(Boolean)
               .join(" ")}
+            style={{ "--d": `${index * 110}ms` } as React.CSSProperties}
           >
             <div className="card-body">
               {card.label ? <span className="card-tag">{card.label}</span> : null}
