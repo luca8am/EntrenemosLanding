@@ -24,7 +24,7 @@ export function LandingProblem({ section }: Props) {
         {section.cards.map((card, index) => (
           <article
             key={card.title}
-            className="card reveal"
+            className="card reveal glow-card"
             style={{ "--d": `${index * 90}ms` } as React.CSSProperties}
           >
             <div className="card-body">

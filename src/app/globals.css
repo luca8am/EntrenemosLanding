@@ -166,16 +166,16 @@ p {
   border-radius: 999px;
   border: 1px solid transparent;
   transition:
-    transform 180ms ease,
-    border-color 180ms ease,
-    background 180ms ease,
-    box-shadow 180ms ease,
-    color 180ms ease;
+    transform 340ms cubic-bezier(0.34, 1.56, 0.64, 1),
+    border-color 220ms ease,
+    background 220ms ease,
+    box-shadow 340ms ease,
+    color 220ms ease;
 }
 
 .button:hover,
 .button:focus-visible {
-  transform: translateY(-1px);
+  transform: translateY(-2px);
 }
 
 .button-primary {
@@ -591,10 +591,25 @@ p {
 .desktop-frame {
   position: relative;
   overflow: hidden;
-  border: 1px solid var(--border);
-  background: linear-gradient(180deg, rgba(18, 29, 38, 0.96), rgba(10, 16, 22, 0.98));
-  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(180deg, rgba(27, 38, 46, 0.35), rgba(10, 16, 22, 0.6));
+  backdrop-filter: blur(20px);
+  box-shadow: var(--shadow-lg), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  transition:
+    transform 450ms cubic-bezier(0.34, 1.56, 0.64, 1),
+    border-color 300ms ease,
+    box-shadow 400ms ease;
 }
+
+.phone-frame:hover,
+.desktop-frame:hover {
+  transform: scale(1.018) translateY(-4px);
+  border-color: rgba(13, 147, 242, 0.45);
+  box-shadow:
+    0 34px 80px rgba(0, 0, 0, 0.5),
+    0 0 45px -5px rgba(13, 147, 242, 0.38);
+}
+
 
 .phone-frame {
   max-width: 310px;
@@ -889,27 +904,56 @@ p {
 .point-card,
 .floating-card {
   transition:
-    transform 260ms cubic-bezier(0.22, 1, 0.36, 1),
-    border-color 260ms ease,
-    box-shadow 260ms ease,
-    background 260ms ease;
+    transform 400ms cubic-bezier(0.34, 1.56, 0.64, 1),
+    border-color 300ms ease,
+    box-shadow 400ms ease,
+    background 300ms ease;
+}
+
+/* Spotlight glow border */
+.glow-card {
+  position: relative;
+}
+
+.glow-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: radial-gradient(
+    320px circle at var(--mouse-x, 0px) var(--mouse-y, 0px),
+    rgba(13, 147, 242, 0.45) 0%,
+    transparent 55%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 350ms ease;
+}
+
+.glow-card:hover::before {
+  opacity: 1;
 }
 
 .grid-3 .card:hover,
 .solution-card:hover {
   transform: translateY(-6px);
-  border-color: rgba(13, 147, 242, 0.4);
+  border-color: rgba(13, 147, 242, 0.35);
   box-shadow:
-    0 26px 60px rgba(0, 0, 0, 0.4),
-    0 0 0 1px rgba(13, 147, 242, 0.18),
-    0 0 40px -8px rgba(13, 147, 242, 0.35);
+    0 30px 65px rgba(0, 0, 0, 0.5),
+    0 0 50px -10px rgba(13, 147, 242, 0.22);
 }
 
 .point-card:hover {
   transform: translateY(-3px);
-  border-color: rgba(13, 147, 242, 0.35);
-  background: rgba(13, 147, 242, 0.06);
+  border-color: rgba(13, 147, 242, 0.3);
+  background: rgba(13, 147, 242, 0.05);
 }
+
 
 .feature-item {
   transition: transform 220ms ease;
@@ -1044,15 +1088,15 @@ p {
 /* Scroll reveal */
 .reveal {
   opacity: 0;
-  transform: translateY(26px);
+  transform: translateY(24px) scale(0.975);
   transition:
-    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    opacity 800ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 800ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal.in {
   opacity: 1;
-  transform: none;
+  transform: translateY(0) scale(1);
 }
 
 .grid-3 .card,

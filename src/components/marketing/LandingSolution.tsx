@@ -27,6 +27,7 @@ export function LandingSolution({ section }: Props) {
               "solution-card",
               "card",
               "reveal",
+              "glow-card",
               card.tone === "accent" ? "accent" : "",
               index === 0 ? "plan" : index === 1 ? "train" : "progress",
             ]

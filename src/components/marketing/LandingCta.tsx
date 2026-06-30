@@ -13,7 +13,7 @@ interface Props {
 export function LandingCta({ section }: Props) {
   return (
     <section className="section" aria-labelledby="final-cta-title">
-      <div className="panel final-cta">
+      <div className="panel final-cta glow-card">
         <div>
           <span className="eyebrow">{section.eyebrow}</span>
           <h2 id="final-cta-title">{section.title}</h2>

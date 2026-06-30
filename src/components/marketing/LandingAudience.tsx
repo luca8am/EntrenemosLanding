@@ -40,7 +40,7 @@ export function LandingAudience({ section }: Props) {
         ))}
       </div>
 
-      <article className="panel audience-panel" role="tabpanel">
+      <article className="panel audience-panel glow-card" role="tabpanel">
         <div>
           <span className="audience-kicker">{current.kicker}</span>
           <h3>{current.title}</h3>
@@ -49,7 +49,7 @@ export function LandingAudience({ section }: Props) {
 
         <div className="point-list">
           {current.points.map((point) => (
-            <div key={point.title} className="point-card">
+            <div key={point.title} className="point-card glow-card">
               <strong>{point.title}</strong>
               <span>{point.description}</span>
             </div>

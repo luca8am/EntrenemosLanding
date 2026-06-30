@@ -15,7 +15,7 @@ export function LandingScreens({ section }: Props) {
       </div>
 
       <div className="screens-grid">
-        <article className="panel showcase reveal">
+        <article className="panel showcase reveal glow-card">
           <span className="card-tag">{section.mobileTitle}</span>
           <h3>{section.mobileDescription}</h3>
 
@@ -58,7 +58,7 @@ export function LandingScreens({ section }: Props) {
           </div>
         </article>
 
-        <article className="panel showcase reveal" style={{ "--d": "120ms" } as React.CSSProperties}>
+        <article className="panel showcase reveal glow-card" style={{ "--d": "120ms" } as React.CSSProperties}>
           <span className="card-tag">{section.webTitle}</span>
           <h3>{section.webDescription}</h3>
 
