@@ -3,6 +3,7 @@ import { LandingCta } from "@/components/marketing/LandingCta";
 import { LandingFooter } from "@/components/marketing/LandingFooter";
 import { LandingHeader } from "@/components/marketing/LandingHeader";
 import { LandingHero } from "@/components/marketing/LandingHero";
+import { LandingPlans } from "@/components/marketing/LandingPlans";
 import { LandingProblem } from "@/components/marketing/LandingProblem";
 import { LandingScreens } from "@/components/marketing/LandingScreens";
 import { LandingSolution } from "@/components/marketing/LandingSolution";
@@ -27,6 +28,7 @@ export default function HomePage() {
         <LandingSolution section={landingContent.solution} />
         <LandingAudience section={landingContent.audience} />
         <LandingScreens section={landingContent.screens} />
+        <LandingPlans section={landingContent.plans} />
         <LandingCta section={landingContent.finalCta} />
       </main>
       <LandingFooter footer={landingContent.footer} />

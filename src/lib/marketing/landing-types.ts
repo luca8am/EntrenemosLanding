@@ -52,3 +52,22 @@ export interface FooterContent {
   links: LandingLink[];
   contact: string;
 }
+
+export interface PricingPlan {
+  name: string;
+  price: string;
+  subtitle: string;
+  features: string[];
+  actionLabel: string;
+  actionHref: string;
+  highlight?: boolean;
+  isContact?: boolean;
+}
+
+export interface PlansSection {
+  eyebrow: string;
+  title: string;
+  description: string;
+  plans: PricingPlan[];
+}
+

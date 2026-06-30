@@ -5,6 +5,7 @@ import type {
   LandingHeroSection,
   LandingLink,
   ScreensSection,
+  PlansSection,
 } from "./landing-types";
 
 const navigation: LandingLink[] = [
@@ -12,6 +13,7 @@ const navigation: LandingLink[] = [
   { label: "Solución", href: "#solucion" },
   { label: "Atletas y entrenadores", href: "#audiencia" },
   { label: "Ecosistema", href: "#ecosistema" },
+  { label: "Planes", href: "#planes" },
 ];
 
 const hero: LandingHeroSection = {
@@ -143,11 +145,81 @@ const screens: ScreensSection = {
   ],
 };
 
+const plans: PlansSection = {
+  eyebrow: "Planes mensuales",
+  title: "Planes mensuales para entrenadores.",
+  description: "Empezá gratis por 1 mes y elegí el plan según tu cantidad de alumnos.",
+  plans: [
+    {
+      name: "Básico",
+      price: "Gratis",
+      subtitle: "Gratis por 1 mes. Hasta 5 alumnos.",
+      features: [
+        "Para empezar sin barreras",
+        "Empezá con tu grupo inicial",
+        "Ideal para probar el servicio",
+      ],
+      actionLabel: "Empezar gratis",
+      actionHref: "#contacto",
+      highlight: true,
+    },
+    {
+      name: "Coach",
+      price: "$20.000",
+      subtitle: "Mensual. Hasta 25 alumnos.",
+      features: [
+        "Para entrenadores en crecimiento",
+        "Más espacio para tus alumnos",
+        "Orden para trabajar mejor",
+      ],
+      actionLabel: "Seleccionar plan",
+      actionHref: "#contacto",
+    },
+    {
+      name: "Pro",
+      price: "$35.000",
+      subtitle: "Mensual. Hasta 50 alumnos.",
+      features: [
+        "Para grupos más grandes",
+        "Seguimiento más amplio",
+        "Buen balance entre capacidad y valor",
+      ],
+      actionLabel: "Seleccionar plan",
+      actionHref: "#contacto",
+    },
+    {
+      name: "Elite",
+      price: "$60.000",
+      subtitle: "Mensual. Hasta 100 alumnos.",
+      features: [
+        "Para equipos grandes",
+        "Más capacidad de trabajo",
+        "Para entrenadores que crecen fuerte",
+      ],
+      actionLabel: "Seleccionar plan",
+      actionHref: "#contacto",
+    },
+    {
+      name: "Personalizado",
+      price: "Consultar",
+      subtitle: "Más de 100 alumnos.",
+      features: [
+        "Soporte prioritario",
+        "Límites a medida",
+        "Integración personalizada",
+      ],
+      actionLabel: "Contactar soporte",
+      actionHref: "mailto:soporte@entrenemos.app",
+      isContact: true,
+    },
+  ],
+};
+
 const finalCta = {
   eyebrow: "Listo para el siguiente paso",
   title: "Entrenemos para ordenar, acompañar y progresar.",
   description:
-    "Esta landing ya evita claims inventados y deja espacio para definir el CTA final cuando estén cerradas las decisiones comerciales y de acceso.",
+    "Unite hoy a la plataforma que conecta a entrenadores y atletas para llevar un registro claro, ordenado y efectivo de cada entrenamiento.",
   primaryAction: { label: "Ver propuesta completa", href: "#inicio" },
   secondaryAction: { label: "Escribir a soporte", href: "mailto:soporte@entrenemos.app" },
 };
@@ -161,6 +233,7 @@ const footer: FooterContent = {
     { label: "Problema", href: "#problema" },
     { label: "Solución", href: "#solucion" },
     { label: "Ecosistema", href: "#ecosistema" },
+    { label: "Planes", href: "#planes" },
   ],
 };
 
@@ -197,6 +270,7 @@ export const landingContent = {
     profiles: audienceProfiles,
   },
   screens,
+  plans,
   finalCta,
   footer,
 };

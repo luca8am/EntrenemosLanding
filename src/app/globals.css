@@ -1364,3 +1364,126 @@ p {
   display: grid;
   gap: 7px;
 }
+
+/* Pricing & plans */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 36px;
+}
+
+.pricing-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.pricing-body {
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100%;
+}
+
+.pricing-top {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.pricing-name {
+  font-size: 0.86rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+}
+
+.pricing-price {
+  font-size: 2.1rem;
+  font-weight: 850;
+  letter-spacing: -0.03em;
+  color: var(--text);
+}
+
+.pricing-subtitle {
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+  line-height: 1.4;
+  min-height: 2.8em;
+}
+
+.pricing-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.pricing-features li {
+  font-size: 0.86rem;
+  color: var(--text-secondary);
+  position: relative;
+  padding-left: 18px;
+}
+
+.pricing-features li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.pricing-btn {
+  width: 100%;
+  margin-top: auto;
+}
+
+.pricing-card.highlight {
+  background:
+    radial-gradient(circle at top right, rgba(13, 147, 242, 0.16), transparent 32%),
+    linear-gradient(180deg, rgba(20, 32, 42, 0.95), rgba(11, 18, 23, 0.98));
+  border-color: rgba(13, 147, 242, 0.3);
+  box-shadow:
+    var(--shadow-md),
+    0 0 40px -10px rgba(13, 147, 242, 0.16);
+}
+
+.pricing-card.highlight .pricing-price {
+  color: #7cd0ff;
+  text-shadow: 0 0 15px rgba(13, 147, 242, 0.3);
+}
+
+@media (max-width: 1200px) {
+  .pricing-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .pricing-card.pricing-contact {
+    grid-column: span 3;
+  }
+}
+
+@media (max-width: 900px) {
+  .pricing-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .pricing-card.pricing-contact {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+  .pricing-card.pricing-contact {
+    grid-column: auto;
+  }
+}
+
