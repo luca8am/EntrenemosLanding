@@ -3,21 +3,26 @@ export interface LandingLink {
   href: string;
 }
 
-export interface LandingStat {
-  label: string;
-  value: string;
-}
-
 export interface LandingHeroSection {
-  eyebrow: string;
   title: string;
   description: string;
   primaryAction: LandingLink;
-  secondaryAction: LandingLink;
-  notes: string[];
-  statusLabel: string;
-  statusValue: string;
-  floatingCards: LandingStat[];
+}
+
+export interface FocusSection {
+  eyebrow: string;
+  title: string;
+  description: string;
+  solutionTitle: string;
+  solutionDescription: string;
+  manifestoBrand: string;
+  manifestoLead: string;
+  trainersLabel: string;
+  athletesLabel: string;
+  platformClaim: string;
+  protagonistsClaim: string;
+  objectiveClaim: string;
+  progressClaim: string;
 }
 
 export interface LandingCard {

@@ -39,6 +39,27 @@ La implementación está pensada para que luego sea fácil:
 - `npm run start`
 - `npm run typecheck`
 
+## Desarrollo local
+
+El flujo de validación de este repositorio es manual y visual con `npm run dev`. Los agentes no deben ejecutar `npm run build` salvo que se solicite de forma explícita. Cuando un cambio requiera reiniciar el servidor de desarrollo (por ejemplo, cambios de configuración, dependencias o variables de entorno), deben indicarlo claramente en su devolución.
+
+`next dev` y `next build` utilizan `.next` por defecto. No ejecutar el build mientras el servidor de desarrollo sigue abierto: ambos procesos pueden escribir manifests distintos en la misma carpeta y dejar el runtime de React Server Components desincronizado.
+
+Si aparecen errores como `Could not find the module ... in the React Client Manifest` o `__webpack_modules__[moduleId] is not a function`:
+
+1. Detener `npm run dev`.
+2. Eliminar únicamente la carpeta generada `.next`.
+3. Volver a ejecutar `npm run dev`.
+
+En PowerShell:
+
+```powershell
+Remove-Item -LiteralPath .next -Recurse -Force
+npm run dev
+```
+
+El repositorio está dentro de OneDrive. Si los errores reaparecen sin haber ejecutado dos procesos de Next en paralelo, pausar la sincronización durante el desarrollo o trabajar desde una carpeta local fuera de OneDrive evita bloqueos y sincronizaciones parciales de archivos temporales.
+
 ## Documentación
 
 - [Contexto de producto](docs/producto.md)

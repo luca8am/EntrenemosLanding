@@ -30,7 +30,9 @@ Para la landing conviene partir de los tokens web y usar los gradientes mobile e
 
 ## Tipografía
 
-La web usa **Inter Variable**, con fallback a tipografías de sistema. Mantener Inter como opción inicial. Los títulos pueden tener mayor peso y tracking ajustado, evitando mayúsculas extendidas y estética de gimnasio agresiva.
+La landing usa **Plus Jakarta Sans** como tipografía global, cargada y optimizada mediante `next/font`. Los pesos disponibles son 400, 500, 600, 700 y 800, con fallback a tipografías de sistema.
+
+La familia se eligió por su equilibrio entre una presencia tecnológica y empresarial y una lectura cercana. Los títulos pueden usar mayor peso y tracking ajustado, evitando mayúsculas extendidas y una estética de gimnasio agresiva. Si una interfaz funcional necesitara otra familia por una razón concreta —por ejemplo código o datos tabulares— debe documentarse como excepción; actualmente no existen excepciones.
 
 ## Formas y profundidad
 
@@ -42,6 +44,17 @@ La web usa **Inter Variable**, con fallback a tipografías de sistema. Mantener 
 ## Movimiento
 
 Usar entradas cortas y discretas (150–400 ms). El movimiento debe reforzar jerarquía y feedback. Respetar `prefers-reduced-motion` y evitar animaciones continuas que compitan con el mensaje.
+
+## Cierre de Enfoque
+
+El bloque final de `#enfoque` funciona como manifiesto de marca, no como una tarjeta informativa convencional. Su composición aprobada presenta:
+
+- “Una plataforma. Dos protagonistas. Un mismo objetivo.” a la izquierda.
+- “Progresar” como palabra de máximo énfasis a la derecha, en azul eléctrico, subrayada y con iluminación controlada.
+- “Esto es Entrenemos” y “El sistema operativo para entrenadores y atletas” centrados debajo.
+- El símbolo oficial como firma final.
+
+En tablet y celular la composición pasa a flujo vertical. El efecto luminoso no tiene animación permanente.
 
 ## Logos
 

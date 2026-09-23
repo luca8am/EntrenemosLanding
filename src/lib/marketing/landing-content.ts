@@ -1,7 +1,7 @@
 import type {
   AudienceProfile,
+  FocusSection,
   FooterContent,
-  LandingCard,
   LandingHeroSection,
   LandingLink,
   ScreensSection,
@@ -9,67 +9,35 @@ import type {
 } from "./landing-types";
 
 const navigation: LandingLink[] = [
-  { label: "Problema", href: "#problema" },
-  { label: "Solución", href: "#solucion" },
-  { label: "Atletas y entrenadores", href: "#audiencia" },
+  { label: "Enfoque", href: "#enfoque" },
   { label: "Ecosistema", href: "#ecosistema" },
-  { label: "Planes", href: "#planes" },
+  { label: "Visión", href: "#vision" },
 ];
 
 const hero: LandingHeroSection = {
-  eyebrow: "Entrenamiento conectado",
-  title: "Todo tu entrenamiento. Un mismo equipo.",
+  title: "La nueva forma de entrenar.",
   description:
-    "Planificá rutinas, registrá cada sesión y seguí el progreso con el contexto que atletas y entrenadores necesitan para sostener el proceso.",
-  primaryAction: { label: "Conocer la propuesta", href: "#solucion" },
-  secondaryAction: { label: "Ver el ecosistema", href: "#ecosistema" },
-  notes: [
-    "Pensado para atletas y entrenadores",
-    "Seguimiento con contexto compartido",
-    "Diseño claro para sostener la constancia",
-  ],
-  statusLabel: "Entrenemos",
-  statusValue: "Progreso claro y compartido",
-  floatingCards: [
-    { label: "Rutina activa", value: "Lo que toca hoy, sin ruido" },
-    { label: "Seguimiento", value: "Sesiones, notas y progreso" },
-    { label: "Acompañamiento", value: "Entrenar con alguien del otro lado" },
-  ],
+    "Entrenemos conecta tu rutina, cada sesión y tu progreso en una misma app, para que atletas y entrenadores compartan el proceso.",
+  primaryAction: { label: "Probá cómo funciona", href: "#training-demo-start" },
 };
 
-const problemCards: LandingCard[] = [
-  {
-    title: "La planificación queda separada del momento de entrenar.",
-    description: "La rutina existe, pero no siempre aparece clara cuando hace falta ejecutarla.",
-  },
-  {
-    title: "El seguimiento se pierde entre chats, notas y mensajes sueltos.",
-    description: "La conversación acompaña, pero cuesta transformarla en un proceso ordenado.",
-  },
-  {
-    title: "El progreso aparece en partes, no como una historia completa.",
-    description: "Sin contexto, sostener hábitos y tomar decisiones se vuelve más difícil.",
-  },
-];
-
-const solutionCards: LandingCard[] = [
-  {
-    label: "Planificar",
-    title: "Rutinas claras para objetivos concretos.",
-    description: "La estructura del trabajo vive en un solo lugar y se entiende rápido.",
-    tone: "accent",
-  },
-  {
-    label: "Entrenar",
-    title: "Una app pensada para ejecutar y registrar.",
-    description: "El atleta sabe qué hacer, qué registrar y cómo viene avanzando.",
-  },
-  {
-    label: "Progresar",
-    title: "Datos útiles para ajustar sin perder lo humano.",
-    description: "El entrenador gana contexto y el atleta gana claridad para sostener el proceso.",
-  },
-];
+const focus: FocusSection = {
+  eyebrow: "Nuestro enfoque",
+  title: "No te disperses al entrenar.",
+  description:
+    "Rutinas en planillas, consultas por WhatsApp, registros en notas y chequeos físicos que se pierden. Cuando el proceso está fragmentado, entrenadores y atletas pierden claridad.",
+  solutionTitle: "Todo el proceso de entrenar y registrar. En un único sistema.",
+  solutionDescription:
+    "Entrenemos conecta la planificación del entrenador con cada sesión, registro y avance del atleta.",
+  manifestoBrand: "Entrenemos.",
+  manifestoLead: "El sistema operativo para",
+  trainersLabel: "entrenadores",
+  athletesLabel: "atletas",
+  platformClaim: "Una plataforma",
+  protagonistsClaim: "Dos protagonistas",
+  objectiveClaim: "Un mismo objetivo:",
+  progressClaim: "progresar",
+};
 
 const audienceProfiles: AudienceProfile[] = [
   {
@@ -230,38 +198,21 @@ const footer: FooterContent = {
   contact: "soporte@entrenemos.app",
   links: [
     { label: "Inicio", href: "#inicio" },
-    { label: "Problema", href: "#problema" },
-    { label: "Solución", href: "#solucion" },
+    { label: "Enfoque", href: "#enfoque" },
     { label: "Ecosistema", href: "#ecosistema" },
-    { label: "Planes", href: "#planes" },
+    { label: "Visión", href: "#vision" },
   ],
 };
 
 export const landingContent = {
   brand: {
     name: "Entrenemos",
-    subtitle: "Entrenamiento conectado",
     logoSrc: "/brand/logo-primary.png",
   },
   navigation,
   headerAction: { label: "Ir al login", href: "/login" },
   hero,
-  problem: {
-    eyebrow: "El problema",
-    title: "Planificar, entrenar y seguir el progreso sigue estando demasiado fragmentado.",
-    description:
-      "Entrenemos busca reunir planificación, ejecución, datos y conversación para que ambas partes entiendan mejor qué hacer y cómo evoluciona el proceso.",
-    cards: problemCards,
-    closing:
-      "La idea no es prometer magia. La idea es hacer más claro el trabajo que ya sostiene el progreso real.",
-  },
-  solution: {
-    eyebrow: "La solución",
-    title: "Una experiencia conectada para atletas y entrenadores.",
-    description:
-      "La app mobile acompaña la ejecución. La plataforma web organiza, da seguimiento y ayuda a decidir con mejor contexto.",
-    cards: solutionCards,
-  },
+  focus,
   audience: {
     eyebrow: "Atletas y entrenadores",
     title: "Dos perspectivas distintas, un mismo proceso.",

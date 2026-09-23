@@ -4,7 +4,6 @@ import type { LandingLink } from "@/lib/marketing/landing-types";
 interface Props {
   brand: {
     name: string;
-    subtitle: string;
     logoSrc: string;
   };
   navigation: LandingLink[];
@@ -18,7 +17,6 @@ export function LandingHeader({ brand, navigation, primaryAction }: Props) {
         <img src={brand.logoSrc} alt={`Logo de ${brand.name}`} />
         <span className="brand-copy">
           <strong>{brand.name}</strong>
-          <span>{brand.subtitle}</span>
         </span>
       </Link>
 

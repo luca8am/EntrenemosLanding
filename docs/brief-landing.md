@@ -6,26 +6,39 @@ Presentar Entrenemos con claridad, generar interés y conducir a una acción con
 
 ## Propuesta de estructura
 
-1. Header simple con marca, navegación breve y CTA.
-2. Hero con propuesta de valor, CTA principal, CTA secundario y visual real del producto.
-3. Problema: planificación, seguimiento y comunicación fragmentados.
-4. Solución: una experiencia conectada para atleta y entrenador.
-5. Beneficios o flujo en tres pasos: planificar, entrenar, progresar.
-6. Bloque para atletas.
-7. Bloque para entrenadores.
-8. Capturas o demo del ecosistema mobile + web.
-9. CTA final.
-10. Footer con contacto, legales, privacidad y accesos.
+1. Header con marca, navegación Enfoque / Ecosistema / Visión y acceso al login.
+2. Hero con propuesta de valor y demo interactiva del registro de entrenamiento.
+3. Enfoque: fragmentación actual, conexión del proceso y manifiesto de marca.
+4. Ecosistema: relación entre la experiencia mobile del atleta y la plataforma web del entrenador.
+5. Visión: contenedor estructural pendiente de contenido aprobado.
+6. CTA final.
+7. Footer.
 
-La estructura es una hipótesis; ajustar después de definir audiencia y conversión prioritarias.
+Las secciones anteriores de problema y solución quedaron unificadas en `#enfoque`. Los contenidos de atletas/entrenadores y planes se conservan en código para evaluar su reutilización, pero no forman parte de la navegación ni de la arquitectura principal actual.
 
 ## Copy de trabajo
 
-- Eyebrow: “Entrenamiento conectado”.
-- Título: “Todo tu entrenamiento. Un mismo equipo.”
-- Bajada: “Planificá rutinas, registrá cada sesión y seguí el progreso con el contexto que atletas y entrenadores necesitan.”
+- Título del hero: “La nueva forma de entrenar.”
+- Bajada: “Entrenemos conecta tu rutina, cada sesión y tu progreso en una misma app, para que atletas y entrenadores compartan el proceso.”
+- CTA del hero: “Probá cómo funciona”.
+- Título de Enfoque: “No te disperses al entrenar.”
+- Posicionamiento: “Entrenemos. El sistema operativo para entrenadores y atletas.”
+- Cierre: “Una plataforma. Dos protagonistas. Un mismo objetivo: progresar.”
 
-Este copy es provisional y debe validarse antes de producción.
+El header no muestra el subtítulo “Entrenamiento conectado”.
+
+## Demo interactiva del hero
+
+La demo se implementa en `TrainingDemo.tsx` con HTML, CSS y estado local, sin autenticación, API, cookies ni almacenamiento persistente. Usa datos de ejemplo y permite:
+
+1. Ver la rutina “Día 1 — Tren superior”.
+2. Comenzar el entrenamiento.
+3. Abrir Press de banca.
+4. Ingresar peso y repeticiones.
+5. Completar la primera serie y ver el progreso.
+6. Reiniciar la demostración.
+
+Debe seguir siendo operable con mouse, teclado y pantalla táctil, tener labels visibles y `aria-live`, y respetar `prefers-reduced-motion`.
 
 ## Requisitos funcionales iniciales
 
