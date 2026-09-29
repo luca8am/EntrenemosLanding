@@ -1,4 +1,5 @@
-import Link from "next/link";
+import { ButtonLink } from "@/components/ui/Button";
+import { Surface } from "@/components/ui/Surface";
 
 interface Props {
   section: {
@@ -13,7 +14,7 @@ interface Props {
 export function LandingCta({ section }: Props) {
   return (
     <section className="section" aria-labelledby="final-cta-title">
-      <div className="panel final-cta glow-card">
+      <Surface className="panel final-cta glow-card">
         <div>
           <span className="eyebrow">{section.eyebrow}</span>
           <h2 id="final-cta-title">{section.title}</h2>
@@ -21,14 +22,14 @@ export function LandingCta({ section }: Props) {
         </div>
 
         <div className="final-cta-actions">
-          <Link className="button button-primary" href={section.primaryAction.href}>
+          <ButtonLink href={section.primaryAction.href}>
             {section.primaryAction.label}
-          </Link>
-          <Link className="button button-secondary" href={section.secondaryAction.href}>
+          </ButtonLink>
+          <ButtonLink variant="secondary" href={section.secondaryAction.href}>
             {section.secondaryAction.label}
-          </Link>
+          </ButtonLink>
         </div>
-      </div>
+      </Surface>
     </section>
   );
 }

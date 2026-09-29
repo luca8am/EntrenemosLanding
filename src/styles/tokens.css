@@ -1,0 +1,80 @@
+:root {
+  color-scheme: dark;
+  --blue-400: #62c1ff;
+  --blue-500: #38b6ff;
+  --blue-600: #0d93f2;
+  --slate-50: #f8fafc;
+  --slate-400: #94a3b8;
+  --slate-700: #25313a;
+  --ink-800: #1b262e;
+  --ink-850: #162028;
+  --ink-900: #101b22;
+  --ink-950: #081018;
+
+  --color-bg-page: var(--ink-900);
+  --color-bg-deep: var(--ink-950);
+  --color-bg-surface: var(--ink-800);
+  --color-bg-surface-alt: var(--ink-850);
+  --color-bg-elevated: var(--slate-700);
+  --color-action-primary: var(--blue-600);
+  --color-action-primary-hover: var(--blue-400);
+  --color-action-primary-soft: rgba(13, 147, 242, 0.16);
+  --color-action-primary-strong: rgba(13, 147, 242, 0.3);
+  --color-text-primary: #ffffff;
+  --color-text-secondary: var(--slate-400);
+  --color-text-muted: rgba(255, 255, 255, 0.5);
+  --color-text-on-action: #03131e;
+  --color-border-subtle: rgba(255, 255, 255, 0.08);
+  --color-border-strong: rgba(255, 255, 255, 0.12);
+  --color-focus-ring: rgba(98, 193, 255, 0.78);
+  --color-success: #10b981;
+  --color-error: #ef4444;
+  --color-warning: #f59e0b;
+
+  /* Compatibility aliases for existing marketing styles. */
+  --bg: var(--color-bg-page);
+  --bg-deep: var(--color-bg-deep);
+  --surface: var(--color-bg-surface);
+  --surface-alt: var(--color-bg-surface-alt);
+  --surface-highlight: var(--color-bg-elevated);
+  --primary: var(--color-action-primary);
+  --primary-soft: var(--color-action-primary-soft);
+  --primary-strong: var(--color-action-primary-strong);
+  --text: var(--color-text-primary);
+  --text-secondary: var(--color-text-secondary);
+  --text-muted: var(--color-text-muted);
+  --border: var(--color-border-subtle);
+  --border-strong: var(--color-border-strong);
+
+  --font-sans: var(--font-plus-jakarta-sans, "Plus Jakarta Sans"), "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-size-sm: 0.8125rem;
+  --font-size-body: 1rem;
+  --line-height-body: 1.625;
+  --tracking-display: -0.04em;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+
+  --radius-control: 12px;
+  --radius-sm: 16px;
+  --radius-md: 22px;
+  --radius-lg: 30px;
+  --radius-pill: 999px;
+  --shadow-lg: 0 24px 80px rgba(0, 0, 0, 0.36);
+  --shadow-md: 0 16px 48px rgba(0, 0, 0, 0.28);
+
+  --duration-instant: 120ms;
+  --duration-fast: 180ms;
+  --duration-standard: 320ms;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --max-width: 1180px;
+  --section-space: 112px;
+}

@@ -1,0 +1,345 @@
+Vamos a rediseñar la sección `#ecosistema` de la landing de Entrenemos.
+
+## Problema actual
+
+La implementación actual presenta las cinco etapas del recorrido simultáneamente en columnas:
+
+- Planificar.
+- Entrenar.
+- Registrar.
+- Evaluar.
+- Continuar.
+
+Esto genera varios problemas:
+
+- Las capturas quedan demasiado pequeñas.
+- Algunas capturas se recortan en lugares incorrectos.
+- Se mezclan imágenes web horizontales con capturas mobile verticales dentro de contenedores similares.
+- Hay demasiado contenido compitiendo al mismo tiempo.
+- El usuario no sabe inmediatamente qué captura corresponde a cada acción.
+- La sección se percibe como una galería técnica y no como un recorrido compartido.
+- En algunos tamaños, el header fijo puede tapar la parte superior de la sección.
+
+Reemplazá este formato por un carrusel interactivo que muestre una sola etapa por vez.
+
+## Objetivo narrativo
+
+El carrusel debe explicar este recorrido:
+
+1. El entrenador planifica.
+2. El atleta recibe la rutina y entrena.
+3. El atleta registra lo realizado.
+4. El atleta evalúa cómo fue la sesión.
+5. Ambos cuentan con más contexto para continuar.
+
+El protagonista debe ser el proceso compartido. La web y la app son las herramientas que acompañan cada momento.
+
+## Encabezado de la sección
+
+Eyebrow:
+
+“Ecosistema”
+
+Título:
+
+“Un mismo proceso, compartido entre atleta y entrenador.”
+
+Descripción:
+
+“El entrenador planifica y asigna desde la web. El atleta lleva esa rutina a cada sesión desde la app, registra lo que hizo y evalúa cómo se sintió. Así, ambos cuentan con más contexto para entender el progreso y preparar lo que sigue.”
+
+Mantené este encabezado separado del carrusel y con suficiente espacio para que no quede oculto detrás del header fijo.
+
+La sección raíz debe conservar:
+
+`id="ecosistema"`
+
+Agregá el `scroll-margin-top` necesario para que navegar desde el header muestre correctamente el inicio de la sección.
+
+## Estructura del carrusel
+
+Mostrá una sola diapositiva activa por vez.
+
+Cada diapositiva debe contener:
+
+- Número de etapa.
+- Nombre de la acción.
+- Rol protagonista: entrenador, atleta o compartido.
+- Descripción breve.
+- Una captura real del producto.
+- Controles para avanzar y retroceder.
+- Indicador de posición: por ejemplo, “1 de 5”.
+- Navegación por pasos o puntos.
+
+En escritorio, usá un layout de dos columnas:
+
+- Texto a la izquierda.
+- Captura grande a la derecha.
+
+La captura debe ocupar más espacio que el texto.
+
+En celular:
+
+- Texto arriba.
+- Captura debajo.
+- Controles accesibles y táctiles.
+- Sin contenido cortado ni desplazamiento horizontal accidental.
+
+## Diapositivas
+
+### 01 — Planificá
+
+Rol:
+
+“Entrenador · Web”
+
+Título:
+
+“El entrenador prepara el camino.”
+
+Descripción:
+
+“Crea la rutina, organiza sus días, suma los ejercicios necesarios y la asigna al atleta.”
+
+Captura:
+
+Usá la captura web que mejor muestre la creación o edición de una rutina.
+
+La captura debe presentarse dentro de un marco de navegador horizontal, no dentro de un teléfono.
+
+### 02 — Entrená
+
+Rol:
+
+“Atleta · App”
+
+Título:
+
+“La rutina acompaña cada sesión.”
+
+Descripción:
+
+“El atleta encuentra sus días, ejercicios y series desde la app y lleva la planificación al momento de entrenar.”
+
+Captura:
+
+Usá la pantalla mobile que muestre la rutina o los días de entrenamiento.
+
+Presentala dentro de un marco de teléfono neutro.
+
+### 03 — Registrá
+
+Rol:
+
+“Atleta · App”
+
+Título:
+
+“Cada serie deja información.”
+
+Descripción:
+
+“El atleta registra peso, repeticiones, series, RIR y notas mientras avanza con su entrenamiento.”
+
+Captura:
+
+Usá la pantalla real de carga de una serie.
+
+Priorizá que se vean claramente los campos de peso, repeticiones y RIR.
+
+### 04 — Evaluá
+
+Rol:
+
+“Atleta · App”
+
+Título:
+
+“El entrenamiento también se entiende por cómo se sintió.”
+
+Descripción:
+
+“Al finalizar, el atleta evalúa cansancio, ánimo, motivación y dificultad como parte de su seguimiento.”
+
+Captura:
+
+Usá la pantalla real de la encuesta posterior al entrenamiento.
+
+La captura debe mostrar las opciones principales sin recortar el título ni la acción de confirmación.
+
+### 05 — Continuá
+
+Rol:
+
+“Proceso compartido”
+
+Título:
+
+“El historial ayuda a preparar lo que sigue.”
+
+Descripción:
+
+“El atleta consulta su recorrido y el entrenador revisa la actividad, los registros y las evaluaciones para decidir cómo continuar según su análisis.”
+
+Captura:
+
+Usá la pantalla que mejor represente el historial o la evolución.
+
+Si existen una captura mobile y otra web realmente necesarias, se pueden mostrar juntas solamente en esta diapositiva, con una captura principal y otra secundaria. No deben superponerse ni ocultarse entre sí.
+
+## Tratamiento correcto de las capturas
+
+Antes de implementar, inspeccioná:
+
+- Dimensiones de cada imagen.
+- Relación de aspecto.
+- Contenido importante.
+- Interfaz a la que pertenece.
+- Zona que debe permanecer visible.
+
+No uses el mismo recorte para todas las imágenes.
+
+### Capturas web
+
+- Presentalas dentro de un marco horizontal de navegador.
+- Usá una proporción cercana a `16:10` o la proporción real del recurso.
+- Priorizá `object-fit: contain`.
+- Si queda espacio libre, completalo con un fondo oscuro o desenfocado derivado de la misma paleta.
+- No estires la imagen.
+
+### Capturas mobile
+
+- Presentalas dentro de un marco vertical de teléfono.
+- Conservá la proporción original.
+- Usá `object-fit: contain`.
+- No recortes encabezados, botones inferiores ni campos principales.
+- No deformes la captura para llenar el contenedor.
+
+### Recortes
+
+Si una captura incluye demasiado contenido irrelevante:
+
+- Ajustá un encuadre específico para esa diapositiva.
+- Usá una clase u `object-position` individual.
+- Si necesitás generar una variante recortada, conservá el archivo original.
+- No hagas recortes destructivos.
+- No amplíes tanto la imagen que pierda nitidez.
+- No uses una captura simulada para sustituir una pantalla real.
+
+Primero corregí el encuadre con CSS. Generá archivos derivados solamente si el CSS no permite mostrar correctamente la información importante.
+
+## Navegación
+
+Incluí:
+
+- Botón “Anterior”.
+- Botón “Siguiente”.
+- Indicadores seleccionables para las cinco etapas.
+- Estado activo claramente visible.
+- Indicador textual “1 de 5”, “2 de 5”, etc.
+
+Los indicadores pueden usar estos nombres:
+
+- Planificá.
+- Entrená.
+- Registrá.
+- Evaluá.
+- Continuá.
+
+No reproduzcas el carrusel automáticamente. La persona debe controlar el avance.
+
+Permití:
+
+- Navegación con botones.
+- Teclas de flecha cuando el carrusel tenga foco.
+- Gestos horizontales en pantallas táctiles, si pueden implementarse sin una dependencia nueva.
+- Selección directa de cualquier etapa.
+
+## Transición
+
+Al cambiar de diapositiva:
+
+- Usá un fade corto o un desplazamiento horizontal sutil.
+- Evitá cambios bruscos en la altura del contenedor.
+- Mantené una altura estable para que la página no salte.
+- No uses animaciones infinitas.
+- Con `prefers-reduced-motion`, realizá el cambio de manera inmediata.
+
+## Identidad visual
+
+Conservá:
+
+- Fondo azul oscuro.
+- Estilo premium y tecnológico.
+- Cian para el entrenador.
+- Celeste para el atleta.
+- Blanco para los momentos compartidos.
+- Bordes e iluminación sutiles.
+- Tipografía y variables actuales de Entrenemos.
+
+No conviertas cada diapositiva en una tarjeta independiente flotando dentro de otra tarjeta. El carrusel debe sentirse como una única superficie narrativa.
+
+Podés utilizar una línea de progreso que conecte las cinco etapas, pero debe ser secundaria frente a la captura activa.
+
+## Uso individual
+
+Debajo del carrusel, agregá una nota breve:
+
+“¿Entrenás por tu cuenta? También podés usar Entrenemos para organizar, registrar y seguir tu propio proceso.”
+
+Debe verse como información complementaria, no como una sexta diapositiva.
+
+## Accesibilidad
+
+- Usá botones nativos.
+- Cada control debe tener un nombre accesible.
+- Marcá el estado seleccionado de los indicadores.
+- Anunciá el cambio de etapa mediante `aria-live` sin repetir contenido innecesariamente.
+- Los controles táctiles deben medir al menos 44 × 44 px.
+- Conservá foco visible.
+- Las capturas deben tener textos alternativos descriptivos.
+- El contenido debe seguir siendo comprensible aunque JavaScript o las animaciones fallen.
+- Evitá depender solamente del color para diferenciar los roles.
+
+## Implementación técnica
+
+- Convertí el carrusel en un componente cliente aislado, por ejemplo `EcosystemCarousel.tsx`.
+- Conservá los datos de las diapositivas separados de la presentación para facilitar cambios de copy o imágenes.
+- Usá estado local.
+- No uses API, backend, cookies ni almacenamiento local.
+- No agregues una librería de carrusel.
+- Usá `next/image` para las capturas.
+- Configurá correctamente `width`, `height` o `fill`, `sizes` y prioridad de carga.
+- Cargá con prioridad solamente la primera captura.
+- Las demás pueden utilizar carga diferida.
+- Evitá cambios de layout mientras cargan las imágenes.
+
+## Alcance
+
+- Modificá únicamente la sección Ecosistema y sus estilos asociados.
+- No modifiques el header.
+- No modifiques Hero, Enfoque, Visión, CTA final, footer ni login.
+- No cambies las capturas originales.
+- No inventes pantallas, métricas ni funciones.
+- No hagas commit ni despliegue.
+
+## Validación
+
+Después de implementar:
+
+1. Informá qué captura asignaste a cada etapa.
+2. Explicá qué encuadre aplicaste a cada imagen.
+3. Confirmá que ninguna captura está deformada.
+4. Confirmá que no se cortan títulos, campos o controles importantes.
+5. Verificá los cinco controles del carrusel.
+6. Verificá navegación con teclado.
+7. Verificá comportamiento táctil si fue implementado.
+8. Verificá `prefers-reduced-motion`.
+9. Revisá escritorio, tablet y celular.
+10. Ejecutá typecheck.
+11. Ejecutá build.
+12. Informá los archivos modificados.
+
+Si el entorno no permite generar capturas de validación, no lo presentes como un error de implementación. Describí las comprobaciones realizadas y dejá la revisión visual final para una captura manual.
+
+No hagas commit ni despliegue.

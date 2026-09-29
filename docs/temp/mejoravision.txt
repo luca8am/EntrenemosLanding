@@ -1,0 +1,331 @@
+Vamos a rediseñar completamente la sección `#vision` de la landing pública de Entrenemos.
+
+Voy a adjuntar una captura del estado actual para que puedas identificar la implementación que debe reemplazarse.
+
+## 
+
+La sección utiliza actualmente:
+
+- Un párrafo muy extenso como título central.
+- Tres bloques conectados: Entrenador, Entrenemos y Atleta.
+- Una declaración secundaria debajo.
+
+Este formato ya fue utilizado conceptualmente en otras partes de la landing, especialmente en Enfoque. La sección se siente repetitiva, ocupa demasiado espacio para comunicar una sola idea y no transmite una visión empresarial de largo plazo.
+
+No queremos volver a utilizar:
+
+- Tres tarjetas o cajas conectadas.
+- Una composición centrada convencional.
+- Una explicación extensa de funciones.
+- La fórmula visual “Entrenador — Entrenemos — Atleta”.
+- Otra secuencia de tres principios.
+- Un nuevo carrusel.
+- Una representación similar a Enfoque o Ecosistema.
+
+Reemplazá la composición actual, no intentes corregirla solamente cambiando tamaños o colores.
+
+## Objetivo
+
+Visión debe expresar hacia dónde apunta Entrenemos como producto y como empresa.
+
+Queremos posicionar a Entrenemos como el sistema operativo que responde a la relación cotidiana entre un entrenador y un atleta y que puede acompañar toda la trayectoria de ese vínculo.
+
+La sección debe transmitir una idea de legado:
+
+- Cada entrenador construye una forma de trabajar y acompañar.
+- Cada atleta construye una trayectoria.
+- Cada rutina, entrenamiento, registro y conversación forma parte de esa historia.
+- Entrenemos organiza, conecta y conserva ese contexto.
+- Lo registrado hoy puede ayudar a comprender y continuar el proceso mañana.
+- La tecnología ofrece estructura y continuidad.
+- El criterio, el compromiso y las decisiones siguen siendo humanos.
+
+No queremos hablar de legado como fama, reconocimiento público o resultados extraordinarios. El legado debe entenderse como el recorrido que entrenador y atleta construyen con el tiempo.
+
+## Posicionamiento
+
+Entrenemos no es solamente una aplicación para cargar ejercicios.
+
+Es un sistema operativo para el trabajo compartido entre entrenadores y atletas:
+
+- El entrenador planifica, acompaña, se comunica, observa y toma decisiones.
+- El atleta entrena, registra, expresa cómo se siente y participa activamente del proceso.
+- Entrenemos reúne ese trabajo y le da continuidad.
+
+La mensajería dentro del producto es una función real y confirmada. Sin embargo, comunicación no significa únicamente enviar mensajes: también implica compartir planificación, registros, sensaciones, dificultades, seguimiento y contexto.
+
+No presentes a Entrenemos como reemplazo del entrenador ni como responsable automático del progreso.
+
+## Nuevo copy aprobado
+
+### Identificador superior
+
+“NUESTRA VISIÓN”
+
+También puede aparecer como metadata visual secundaria:
+
+`ENTRENEMOS / SISTEMA OPERATIVO`
+
+Esta metadata es un recurso gráfico. No debe competir con el título.
+
+### Título principal
+
+“El progreso deja una historia.  
+Construimos el sistema que le da continuidad.”
+
+Estas dos oraciones deben formar una sola declaración visual.
+
+“El progreso deja una historia” introduce la idea de recorrido y legado.
+
+“Construimos el sistema que le da continuidad” posiciona a Entrenemos como una empresa que desarrolla infraestructura para ese proceso.
+
+### Bajada
+
+“Cada entrenador construye una forma de acompañar. Cada atleta, una trayectoria. Entrenemos conecta ambos recorridos para que cada rutina, registro y conversación se conviertan en contexto para lo que sigue.”
+
+### Cierre
+
+“Lo que hoy se entrena, mañana forma parte de un recorrido.”
+
+No agregues otros párrafos, principios, claims o explicaciones.
+
+No cambies este copy durante la implementación. Si encontrás un problema importante de comprensión, extensión o accesibilidad, informalo antes de modificarlo.
+
+## Dirección visual: sistema de continuidad
+
+Queremos una composición tecnológica, empresarial y de mayor madurez visual.
+
+La sección debe sentirse como una declaración de producto de una empresa tecnológica, no como una tarjeta promocional de una aplicación fitness.
+
+### Composición general
+
+Construí una superficie amplia y asimétrica que ocupe buena parte del ancho disponible.
+
+La composición puede organizarse de esta manera:
+
+1. Una cabecera técnica y discreta.
+2. La declaración principal en gran escala.
+3. La bajada en un ancho de lectura controlado.
+4. Una representación abstracta de continuidad.
+5. El cierre como firma final.
+
+No centres todo el contenido.
+
+En escritorio, utilizá una alineación asimétrica o una grilla editorial. El título puede ocupar aproximadamente dos tercios del ancho y la bajada puede ubicarse en una columna complementaria o debajo, pero desplazada respecto del título.
+
+La sección tiene que diferenciarse claramente de las composiciones centradas anteriores.
+
+## Recurso visual principal
+
+En lugar de las tres tarjetas actuales, representá una trayectoria continua.
+
+Podés utilizar:
+
+- Una línea de sistema que atraviese la composición.
+- Una curva, órbita o recorrido que continúe fuera de los límites visibles.
+- Nodos mínimos que sugieran momentos acumulados en el tiempo.
+- Una grilla técnica muy tenue.
+- Marcas de tiempo abstractas sin fechas ni métricas.
+- Fragmentos visuales que se integren progresivamente en una única línea.
+- El símbolo o logo de Entrenemos integrado de manera controlada.
+
+La representación debe comunicar:
+
+- Continuidad.
+- Memoria.
+- Conexión.
+- Evolución.
+- Un sistema preparado para acompañar un recorrido prolongado.
+
+No debe convertirse en un diagrama explicativo de funcionalidades.
+
+No utilices nuevamente cajas para “Entrenador”, “Entrenemos” y “Atleta”. Ambos protagonistas ya están nombrados en el copy y no necesitan otra tarjeta individual.
+
+No inventes:
+
+- Fechas.
+- Cantidad de entrenamientos.
+- Métricas.
+- Porcentajes.
+- Nombres de personas.
+- Mensajes ficticios.
+- Testimonios.
+- Resultados físicos.
+- Estados de actividad que parezcan datos reales.
+
+## Perfil tecnológico y empresarial
+
+La sección debe mostrar una identidad más cercana a una compañía de producto digital.
+
+Podés incorporar de manera controlada:
+
+- Una retícula técnica.
+- Coordenadas o divisiones puramente decorativas.
+- Etiquetas pequeñas en mayúsculas.
+- Una línea estructural de color `#0D93F2`.
+- Bordes de precisión.
+- Gradientes radiales oscuros.
+- Tipografía de metadata con mayor espaciado.
+- Numeración o códigos únicamente decorativos y claramente no asociados a datos reales.
+- Una composición semejante a un plano de sistema o infraestructura digital.
+
+No conviertas la sección en una terminal, dashboard, consola ni interfaz de ciencia ficción.
+
+Tiene que sentirse tecnológica y empresarial, pero también humana, clara y accesible.
+
+## Jerarquía tipográfica
+
+El título es el protagonista.
+
+Jerarquía sugerida:
+
+**EL PROGRESO DEJA UNA HISTORIA.**
+
+**CONSTRUIMOS EL SISTEMA  
+QUE LE DA CONTINUIDAD.**
+
+Podés utilizar mayúsculas si funcionan correctamente con la tipografía actual, pero evitá que el texto parezca agresivo.
+
+Tratamiento sugerido:
+
+- “El progreso deja una historia”: blanco o gris muy claro.
+- “Construimos el sistema”: blanco.
+- “Continuidad”: azul `#0D93F2`, cian o un gradiente azul-celeste muy controlado.
+- La bajada: color secundario con contraste suficiente.
+- El cierre: blanco, con una línea o marca de color que funcione como firma.
+
+No uses más de un gradiente protagonista.
+
+## Identidad visual
+
+Conservá:
+
+- Fondo azul oscuro.
+- Estética dark premium.
+- Color principal `#0D93F2`.
+- Cian y celeste como colores complementarios.
+- Bordes sutiles.
+- Profundidad controlada.
+- Tipografía existente.
+- Coherencia con el resto de la landing.
+
+La innovación debe aparecer en la composición, la jerarquía y el concepto visual, no mediante una acumulación de efectos.
+
+Evitá:
+
+- Neón excesivo.
+- Brillos permanentes.
+- Partículas.
+- Tarjetas flotantes.
+- Tres columnas equivalentes.
+- Íconos genéricos de gimnasio.
+- Imágenes de cuerpos.
+- Trofeos, medallas o símbolos literales de legado.
+- Efectos de videojuego.
+- Exceso de texto.
+- Marketing grandilocuente.
+- Frases como “revolucionar el fitness”, “cambiar el mundo”, “garantizar resultados” o “la plataforma definitiva”.
+
+## Animación
+
+Si agregás movimiento, debe reforzar la idea de continuidad.
+
+Opciones permitidas:
+
+- Una línea que se dibuje una sola vez al entrar en viewport.
+- Nodos que aparezcan progresivamente y permanezcan estáticos.
+- Reveal corto de las dos partes del título.
+- Un desplazamiento lumínico único sobre la línea de trayectoria.
+
+No uses:
+
+- Loops infinitos.
+- Pulsos permanentes.
+- Partículas continuas.
+- Elementos orbitando indefinidamente.
+- Animaciones que impidan leer el contenido.
+
+Con `prefers-reduced-motion`, la composición debe mostrarse completa inmediatamente o con una transición mínima.
+
+## Responsive
+
+### Escritorio
+
+- Utilizá una composición asimétrica.
+- El título debe dominar el bloque.
+- La bajada debe tener un ancho de lectura controlado.
+- La trayectoria visual puede cruzar horizontal o diagonalmente la sección.
+- El cierre debe funcionar como firma y transición hacia el CTA final.
+- Mantené suficiente espacio negativo.
+
+### Celular
+
+- Convertí la composición en un recorrido vertical.
+- Permití saltos naturales en el título.
+- No reduzcas excesivamente el tamaño tipográfico.
+- La trayectoria puede convertirse en una línea vertical o en una curva simplificada.
+- La metadata debe seguir siendo legible, pero secundaria.
+- Evitá overflow horizontal.
+- No recortes la decoración de forma que parezca un error.
+- Conservá suficiente padding lateral y vertical.
+
+## Accesibilidad
+
+- La sección raíz debe conservar `id="vision"`.
+- Usá HTML semántico.
+- Verificá que el enlace “Visión” del header siga funcionando.
+- No dependas solamente del color para comunicar la declaración.
+- Los recursos técnicos y decorativos deben quedar fuera del árbol de accesibilidad.
+- Mantené un orden de lectura lógico.
+- Verificá el contraste del azul sobre el fondo oscuro.
+- Respetá `prefers-reduced-motion`.
+- La sección debe comprenderse completamente sin animaciones ni JavaScript.
+
+## Alcance técnico
+
+Antes de modificar:
+
+1. Inspeccioná el componente actual de Visión.
+2. Identificá los estilos específicos que generan la composición mostrada en la captura.
+3. Revisá `src/app/page.tsx`.
+4. Revisá `src/app/globals.css`.
+5. Confirmá que la sección está ubicada después de Ecosistema y antes del CTA final.
+6. Revisá los cambios locales existentes y preservalos.
+
+Durante la implementación:
+
+- Modificá únicamente la sección Visión y sus estilos específicos.
+- Reemplazá por completo la composición actual de tres bloques.
+- Reutilizá variables y recursos existentes cuando sean apropiados.
+- Utilizá selectores específicos para evitar afectar otras páginas.
+- No agregues dependencias.
+- No modifiques Hero.
+- No modifiques Enfoque.
+- No modifiques el carrusel de Ecosistema.
+- No modifiques el CTA final.
+- No modifiques header, footer ni login.
+- No hagas commit.
+- No hagas deploy.
+
+## Validación
+
+Después de implementar:
+
+1. Confirmá que desapareció la composición de tres tarjetas.
+2. Confirmá que no se repite el formato visual de Enfoque.
+3. Confirmá que se utiliza exactamente el nuevo copy aprobado.
+4. Confirmá que la sección expresa continuidad y trayectoria.
+5. Confirmá que Entrenemos se presenta como sistema operativo y no solamente como una app de registro.
+6. Confirmá que entrenador y atleta aparecen en el mensaje sin recurrir a dos tarjetas separadas.
+7. Confirmá que la sección se siente tecnológica y empresarial sin perder cercanía.
+8. Verificá el enlace `#vision`.
+9. Verificá escritorio y celular.
+10. Verificá que no exista overflow horizontal.
+11. Verificá contraste y orden de lectura.
+12. Verificá `prefers-reduced-motion`.
+13. Ejecutá typecheck.
+14. Ejecutá build.
+15. Si el entorno dispone de un navegador, mostrame una captura en escritorio y otra en celular.
+16. Si no puede obtener capturas, explicá el bloqueo y no las sustituyas por recreaciones.
+17. Informá todos los archivos modificados.
+18. No publiques ni confirmes cambios.

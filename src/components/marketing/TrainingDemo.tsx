@@ -1,6 +1,7 @@
 "use client";
 
 import { useReducer } from "react";
+import { Button } from "@/components/ui/Button";
 
 type DemoStep = "routine" | "session" | "exercise" | "completed";
 
@@ -63,9 +64,9 @@ export function TrainingDemoTrigger({ label }: { label: string }) {
   };
 
   return (
-    <button className="button button-primary" type="button" onClick={focusDemo}>
+    <Button onClick={focusDemo}>
       {label}
-    </button>
+    </Button>
   );
 }
 

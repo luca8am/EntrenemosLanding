@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { ButtonLink } from "@/components/ui/Button";
 
 export default function LoginPlaceholderPage() {
   return (
@@ -19,12 +19,12 @@ export default function LoginPlaceholderPage() {
           </div>
 
           <div className="final-cta-actions">
-            <Link className="button button-primary" href="/">
+            <ButtonLink href="/">
               Volver a la landing
-            </Link>
-            <a className="button button-secondary" href="mailto:soporte@entrenemos.app">
+            </ButtonLink>
+            <ButtonLink variant="secondary" href="mailto:soporte@entrenemos.app">
               soporte@entrenemos.app
-            </a>
+            </ButtonLink>
           </div>
         </div>
       </section>

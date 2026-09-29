@@ -1,8 +1,9 @@
-import { LandingCta } from "@/components/marketing/LandingCta";
+﻿import { LandingCta } from "@/components/marketing/LandingCta";
 import { LandingFocus } from "@/components/marketing/LandingFocus";
 import { LandingFooter } from "@/components/marketing/LandingFooter";
 import { LandingHeader } from "@/components/marketing/LandingHeader";
 import { LandingHero } from "@/components/marketing/LandingHero";
+import { LandingVision } from "@/components/marketing/LandingVision";
 import { LandingScreens } from "@/components/marketing/LandingScreens";
 import { ScrollRevealInit } from "@/components/marketing/ScrollRevealInit";
 import { TopbarScrollEffect } from "@/components/marketing/TopbarScrollEffect";
@@ -23,15 +24,12 @@ export default function HomePage() {
         <LandingHero section={landingContent.hero} />
         <LandingFocus section={landingContent.focus} />
         <LandingScreens section={landingContent.screens} />
-        <section
-          id="vision"
-          className="landing-anchor vision-placeholder"
-          aria-label="Visión"
-          data-content-status="pending"
-        />
+        <LandingVision />
         <LandingCta section={landingContent.finalCta} />
       </main>
       <LandingFooter footer={landingContent.footer} />
     </div>
   );
 }
+
+

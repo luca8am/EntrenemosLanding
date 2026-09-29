@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { BrandMark } from "@/components/ui/BrandMark";
+import { Button } from "@/components/ui/Button";
+import { Disclosure } from "@/components/ui/Disclosure";
+import { Surface } from "@/components/ui/Surface";
+import { TextField } from "@/components/ui/TextField";
 import styles from "./design-system.module.css";
 
 export const metadata: Metadata = {
@@ -9,14 +14,14 @@ export const metadata: Metadata = {
 };
 
 const colors = [
-  { name: "Fondo", token: "--bg", value: "#101B22", className: styles.bg },
-  { name: "Fondo profundo", token: "--bg-deep", value: "#081018", className: styles.bgDeep },
-  { name: "Superficie", token: "--surface", value: "#1B262E", className: styles.surface },
-  { name: "Superficie alternativa", token: "--surface-alt", value: "#162028", className: styles.surfaceAlt },
-  { name: "Realce", token: "--surface-highlight", value: "#25313A", className: styles.highlight },
-  { name: "Acción", token: "--primary", value: "#0D93F2", className: styles.primary },
-  { name: "Texto", token: "--text", value: "#FFFFFF", className: styles.text },
-  { name: "Texto secundario", token: "--text-secondary", value: "#94A3B8", className: styles.textSecondary },
+  { name: "Fondo", token: "--color-bg-page", value: "#101B22", className: styles.bg },
+  { name: "Fondo profundo", token: "--color-bg-deep", value: "#081018", className: styles.bgDeep },
+  { name: "Superficie", token: "--color-bg-surface", value: "#1B262E", className: styles.surface },
+  { name: "Superficie alternativa", token: "--color-bg-surface-alt", value: "#162028", className: styles.surfaceAlt },
+  { name: "Realce", token: "--color-bg-elevated", value: "#25313A", className: styles.highlight },
+  { name: "Acción", token: "--color-action-primary", value: "#0D93F2", className: styles.primary },
+  { name: "Texto", token: "--color-text-primary", value: "#FFFFFF", className: styles.text },
+  { name: "Texto secundario", token: "--color-text-secondary", value: "#94A3B8", className: styles.textSecondary },
 ];
 
 const typeScale = [
@@ -34,10 +39,7 @@ export default function DesignSystemPage() {
   return (
     <div className={styles.shell}>
       <header className={styles.topbar}>
-        <Link className={styles.brand} href="/" aria-label="Volver a Entrenemos">
-          <img src="/brand/logo-primary.png" alt="" />
-          <span>Entrenemos</span>
-        </Link>
+        <BrandMark className={styles.brand} />
         <nav aria-label="Secciones del sistema de diseño">
           <a href="#fundamentos">Fundamentos</a>
           <a href="#componentes">Componentes</a>
@@ -79,7 +81,7 @@ export default function DesignSystemPage() {
           </div>
 
           <div className={styles.foundationGrid}>
-            <article className={styles.specimen}>
+            <Surface as="article" className={styles.specimen}>
               <div className={styles.specimenHeading}>
                 <h3>Tipografía</h3>
                 <p>Plus Jakarta Sans</p>
@@ -92,9 +94,9 @@ export default function DesignSystemPage() {
                   </div>
                 ))}
               </div>
-            </article>
+            </Surface>
 
-            <article className={styles.specimen}>
+            <Surface as="article" className={styles.specimen}>
               <div className={styles.specimenHeading}>
                 <h3>Espaciado</h3>
                 <p>Base de 4 px</p>
@@ -116,7 +118,7 @@ export default function DesignSystemPage() {
                   <span className={styles.radiusXLarge}>30</span>
                 </div>
               </div>
-            </article>
+            </Surface>
           </div>
         </section>
 
@@ -127,26 +129,26 @@ export default function DesignSystemPage() {
           </div>
 
           <div className={styles.componentGrid}>
-            <article className={styles.componentPanel}>
+            <Surface as="article" className={styles.componentPanel}>
               <h3>Botones</h3>
               <div className={styles.buttonRows}>
-                <div><button className={styles.buttonPrimary}>Acción principal</button><span>Principal</span></div>
-                <div><button className={styles.buttonSecondary}>Acción secundaria</button><span>Secundario</span></div>
-                <div><button className={styles.buttonQuiet}>Acción discreta</button><span>Terciario</span></div>
-                <div><button className={styles.buttonPrimary} disabled>No disponible</button><span>Deshabilitado</span></div>
+                <div><Button>Acción principal</Button><span>Principal</span></div>
+                <div><Button variant="secondary">Acción secundaria</Button><span>Secundario</span></div>
+                <div><Button variant="tertiary">Acción discreta</Button><span>Terciario</span></div>
+                <div><Button disabled>No disponible</Button><span>Deshabilitado</span></div>
               </div>
-            </article>
+            </Surface>
 
-            <article className={styles.componentPanel}>
+            <Surface as="article" className={styles.componentPanel}>
               <h3>Campos</h3>
               <div className={styles.fieldStack}>
-                <label><span>Peso en kg</span><input type="number" placeholder="Ejemplo: 60" /></label>
-                <label><span>Objetivo de la sesión</span><input type="text" defaultValue="Trabajar con buena técnica" /></label>
-                <label className={styles.fieldError}><span>Repeticiones</span><input aria-invalid="true" aria-describedby="reps-error" type="number" defaultValue="0" /><small id="reps-error">Ingresá un valor mayor a cero.</small></label>
+                <TextField id="weight-example" label="Peso en kg" type="number" placeholder="Ejemplo: 60" />
+                <TextField id="session-goal-example" label="Objetivo de la sesión" type="text" defaultValue="Trabajar con buena técnica" />
+                <TextField id="reps-example" label="Repeticiones" type="number" defaultValue="0" error="Ingresá un valor mayor a cero." />
               </div>
-            </article>
+            </Surface>
 
-            <article className={`${styles.componentPanel} ${styles.feedbackPanel}`}>
+            <Surface as="article" className={`${styles.componentPanel} ${styles.feedbackPanel}`}>
               <h3>Estado de sesión</h3>
               <div className={styles.sessionState}>
                 <div><strong>Press de banca</strong><span>Serie 1 de 4</span></div>
@@ -157,7 +159,7 @@ export default function DesignSystemPage() {
                 <div><span>Repeticiones</span><strong>10</strong></div>
               </div>
               <p>Los estados semánticos informan. El color nunca es la única señal.</p>
-            </article>
+            </Surface>
           </div>
         </section>
 
@@ -179,22 +181,18 @@ export default function DesignSystemPage() {
           </div>
 
           <div className={styles.disclosures}>
-            <details open>
-              <summary><span>Qué significa Entrenemos</span><small>Principio de marca</small></summary>
-              <div><p>El nombre funciona como verbo y como invitación. Propone hacer juntos, no competir entre personas.</p><p>La tecnología organiza el proceso, pero el progreso sigue siendo humano.</p></div>
-            </details>
-            <details>
-              <summary><span>Cómo hablamos</span><small>Voz rioplatense</small></summary>
-              <div><p>Usamos frases directas, cercanas y concretas: entrená, registrá, seguí, compartí.</p><p>Evitamos gritos, culpa, promesas rápidas y lenguaje agresivo de fitness.</p></div>
-            </details>
-            <details>
-              <summary><span>Claims y datos</span><small>Límites de comunicación</small></summary>
-              <div><p>No inventamos métricas, precios, testimonios ni disponibilidad. Los datos de una demostración siempre se identifican como ejemplos.</p><p>No hacemos recomendaciones médicas ni prometemos resultados físicos.</p></div>
-            </details>
-            <details>
-              <summary><span>Accesibilidad</span><small>Parte del sistema</small></summary>
-              <div><p>Contraste AA, foco visible, controles con nombre accesible, objetivos táctiles amplios y orden semántico.</p><p>El movimiento es breve, funcional y se reduce cuando el sistema operativo lo solicita.</p></div>
-            </details>
+            <Disclosure title="Qué significa Entrenemos" meta="Principio de marca" defaultOpen>
+              <p>El nombre funciona como verbo y como invitación. Propone hacer juntos, no competir entre personas.</p><p>La tecnología organiza el proceso, pero el progreso sigue siendo humano.</p>
+            </Disclosure>
+            <Disclosure title="Cómo hablamos" meta="Voz rioplatense">
+              <p>Usamos frases directas, cercanas y concretas: entrená, registrá, seguí, compartí.</p><p>Evitamos gritos, culpa, promesas rápidas y lenguaje agresivo de fitness.</p>
+            </Disclosure>
+            <Disclosure title="Claims y datos" meta="Límites de comunicación">
+              <p>No inventamos métricas, precios, testimonios ni disponibilidad. Los datos de una demostración siempre se identifican como ejemplos.</p><p>No hacemos recomendaciones médicas ni prometemos resultados físicos.</p>
+            </Disclosure>
+            <Disclosure title="Accesibilidad" meta="Parte del sistema">
+              <p>Contraste AA, foco visible, controles con nombre accesible, objetivos táctiles amplios y orden semántico.</p><p>El movimiento es breve, funcional y se reduce cuando el sistema operativo lo solicita.</p>
+            </Disclosure>
           </div>
         </section>
       </main>

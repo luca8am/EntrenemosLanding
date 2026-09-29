@@ -1,4 +1,5 @@
 import React from "react";
+import { ButtonLink } from "@/components/ui/Button";
 import type { PlansSection } from "@/lib/marketing/landing-types";
 
 interface Props {
@@ -43,16 +44,13 @@ export function LandingPlans({ section }: Props) {
                 ))}
               </ul>
 
-              <a
-                className={[
-                  "button",
-                  "pricing-btn",
-                  plan.highlight ? "button-primary" : "button-secondary",
-                ].join(" ")}
+              <ButtonLink
+                className="pricing-btn"
+                variant={plan.highlight ? "primary" : "secondary"}
                 href={plan.actionHref}
               >
                 {plan.actionLabel}
-              </a>
+              </ButtonLink>
             </div>
           </article>
         ))}

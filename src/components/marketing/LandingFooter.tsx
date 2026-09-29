@@ -1,4 +1,5 @@
-import Link from "next/link";
+import { ButtonLink } from "@/components/ui/Button";
+import { Surface } from "@/components/ui/Surface";
 import type { FooterContent } from "@/lib/marketing/landing-types";
 
 interface Props {
@@ -8,7 +9,7 @@ interface Props {
 export function LandingFooter({ footer }: Props) {
   return (
     <footer className="footer">
-      <div className="panel footer-shell">
+      <Surface className="panel footer-shell">
         <div className="footer-copy">
           <strong>Entrenemos</strong>
           <p>{footer.description}</p>
@@ -17,12 +18,12 @@ export function LandingFooter({ footer }: Props) {
 
         <div className="footer-links">
           {footer.links.map((link) => (
-            <Link key={link.href} className="button button-tertiary" href={link.href}>
+            <ButtonLink key={link.href} variant="tertiary" href={link.href}>
               {link.label}
-            </Link>
+            </ButtonLink>
           ))}
         </div>
-      </div>
+      </Surface>
     </footer>
   );
 }

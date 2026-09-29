@@ -1,4 +1,4 @@
-import type {
+﻿import type {
   AudienceProfile,
   FocusSection,
   FooterContent,
@@ -6,6 +6,7 @@ import type {
   LandingLink,
   ScreensSection,
   PlansSection,
+  VisionSection,
 } from "./landing-types";
 
 const navigation: LandingLink[] = [
@@ -88,29 +89,127 @@ const audienceProfiles: AudienceProfile[] = [
 
 const screens: ScreensSection = {
   eyebrow: "Ecosistema",
-  title: "Una experiencia conectada entre mobile y web.",
+  title: "Un mismo proceso, compartido entre atleta y entrenador.",
   description:
-    "Entrenemos no es una sola pantalla: combina una experiencia mobile enfocada en el atleta y una plataforma web orientada a la gestión del entrenador.",
-  mobileTitle: "App mobile para el momento de entrenar",
-  mobileDescription:
-    "Rutina activa, registro, historial y señales de progreso en una experiencia más directa.",
-  webTitle: "Panel web para organizar, seguir y decidir",
-  webDescription:
-    "Una capa de gestión donde el entrenador puede ver mejor a sus atletas y trabajar con más orden.",
-  features: [
+    "El entrenador planifica y asigna desde la web. El atleta lleva esa rutina a cada sesión desde la app, registra lo que hizo y evalúa cómo se sintió. Así, ambos cuentan con más contexto para entender el progreso y preparar lo que sigue.",
+  independentNote:
+    "¿Entrenás por tu cuenta? También podés usar Entrenemos para organizar, registrar y seguir tu propio proceso.",
+  slides: [
     {
-      title: "Atleta y entrenador comparten contexto",
-      description: "La misma información se usa para entrenar y para acompañar mejor.",
+      id: "planificar",
+      label: "Planificá",
+      role: "Entrenador · Web",
+      roleTone: "trainer",
+      title: "El camino queda planificado.",
+      description: "Crea la rutina, organiza sus días, suma los ejercicios necesarios y la asigna al atleta.",
+      media: {
+        src: "/product/ecosystem/web-create-template.png",
+        alt: "Creación de una plantilla de rutina en la plataforma web de Entrenemos",
+        kind: "web",
+        crop: "web-create-template",
+        width: 1920,
+        height: 884,
+      },
     },
     {
-      title: "El sistema prioriza claridad por sobre ruido",
-      description: "Cada bloque de información tiene un propósito concreto dentro del proceso.",
+      id: "entrenar",
+      label: "Entrená",
+      role: "Atleta · App",
+      roleTone: "athlete",
+      title: "La rutina llega a la sesión.",
+      description:
+        "El atleta encuentra sus días, ejercicios y series desde la app y lleva la planificación al momento de entrenar.",
+      media: {
+        src: "/product/ecosystem/mobile-routine-landing.png",
+        alt: "Rutina del atleta organizada por días y ejercicios en la app",
+        kind: "mobile",
+        crop: "mobile-routine",
+        width: 1170,
+        height: 2406,
+      },
     },
     {
-      title: "Arquitectura pensada para crecer",
-      description: "Se puede expandir sin perder la lógica central de acompañamiento y progreso.",
+      id: "registrar",
+      label: "Registrá",
+      role: "Atleta · App",
+      roleTone: "athlete",
+      title: "Cada serie suma contexto.",
+      description: "El atleta registra peso, repeticiones, series, RIR y notas mientras avanza con su entrenamiento.",
+      media: {
+        src: "/product/ecosystem/mobile-register-landing.png",
+        alt: "Registro de una serie con peso, repeticiones y RIR durante el entrenamiento",
+        kind: "mobile",
+        crop: "mobile-register",
+        width: 1170,
+        height: 2406,
+      },
+    },
+    {
+      id: "evaluar",
+      label: "Evaluá",
+      role: "Atleta · App",
+      roleTone: "athlete",
+      title: "La sesión también deja sensaciones.",
+      description:
+        "Al finalizar, el atleta evalúa cansancio, ánimo, motivación y dificultad como parte de su seguimiento.",
+      media: {
+        src: "/product/ecosystem/mobile-evaluate-landing.png",
+        alt: "Resumen de una sesión con evaluaciones de dificultad, ánimo y cansancio",
+        kind: "mobile",
+        crop: "mobile-evaluate",
+        width: 1170,
+        height: 2406,
+      },
+    },
+    {
+      id: "continuar",
+      label: "Continuá",
+      role: "Proceso compartido",
+      roleTone: "shared",
+      title: "El historial prepara lo que sigue.",
+      description:
+        "El atleta consulta su recorrido y el entrenador revisa la actividad, los registros y las evaluaciones para decidir cómo continuar según su análisis.",
+      media: {
+        src: "/product/ecosystem/mobile-history-month-landing.png",
+        alt: "Historial mensual de actividad del atleta",
+        kind: "mobile",
+        crop: "mobile-history-month",
+        width: 1170,
+        height: 2406,
+      },
     },
   ],
+};
+
+const vision: VisionSection = {
+  eyebrow: "Nuestra visión",
+  title: "Acompañar también es parte de entrenar.",
+  description:
+    "Un entrenador no solo prepara rutinas. También observa, escucha y busca entender qué necesita cada atleta para sostener su proceso. Entrenemos se encarga de organizar tu trabajo y establecer la comunicación optima para que entrenadores y atletas entrenen mejor.",
+  principles: [
+    {
+      label: "01 — Entender",
+      title: "Más que saber si entrenó",
+      description:
+        "Cada registro ayuda a comprender qué ocurrió durante la sesión: qué pudo completar el atleta, cómo se sintió y qué dificultades encontró.",
+    },
+    {
+      label: "02 — Acompañar",
+      title: "Información para estar presente",
+      description:
+        "El entrenador puede revisar el proceso, conversar directamente con el atleta y contar con más contexto para decidir cómo continuar.",
+    },
+    {
+      label: "03 — Sostener",
+      title: "Constancia que se construye",
+      description:
+        "El atleta puede registrar su recorrido, reconocer su continuidad y comprender que cada entrenamiento forma parte de un proceso más grande.",
+    },
+  ],
+  closing:
+    "Entrenemos convierte rutinas, registros, sensaciones y conversaciones en un proceso que atleta y entrenador pueden comprender y construir juntos.",
+  finalStatement:
+    "La experiencia y el criterio siguen siendo humanos. La tecnología les da un lugar donde trabajar mejor.",
 };
 
 const plans: PlansSection = {
@@ -221,7 +320,10 @@ export const landingContent = {
     profiles: audienceProfiles,
   },
   screens,
+  vision,
   plans,
   finalCta,
   footer,
 };
+
+

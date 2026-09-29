@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { BrandMark } from "@/components/ui/BrandMark";
+import { ButtonLink } from "@/components/ui/Button";
 import type { LandingLink } from "@/lib/marketing/landing-types";
 
 interface Props {
@@ -13,12 +15,7 @@ interface Props {
 export function LandingHeader({ brand, navigation, primaryAction }: Props) {
   return (
     <header className="topbar" id="inicio">
-      <Link className="brand" href="#inicio" aria-label={brand.name}>
-        <img src={brand.logoSrc} alt={`Logo de ${brand.name}`} />
-        <span className="brand-copy">
-          <strong>{brand.name}</strong>
-        </span>
-      </Link>
+      <BrandMark className="brand" href="#inicio" logoSrc={brand.logoSrc} name={brand.name} />
 
       <nav className="topnav" aria-label="Principal">
         {navigation.map((item) => (
@@ -28,9 +25,9 @@ export function LandingHeader({ brand, navigation, primaryAction }: Props) {
         ))}
       </nav>
 
-      <Link className="button button-secondary" href={primaryAction.href}>
+      <ButtonLink variant="secondary" href={primaryAction.href}>
         {primaryAction.label}
-      </Link>
+      </ButtonLink>
     </header>
   );
 }

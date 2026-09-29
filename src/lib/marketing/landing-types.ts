@@ -1,4 +1,4 @@
-export interface LandingLink {
+﻿export interface LandingLink {
   label: string;
   href: string;
 }
@@ -45,13 +45,42 @@ export interface ScreensSection {
   eyebrow: string;
   title: string;
   description: string;
-  mobileTitle: string;
-  mobileDescription: string;
-  webTitle: string;
-  webDescription: string;
-  features: LandingCard[];
+  independentNote: string;
+  slides: EcosystemSlide[];
 }
 
+export interface EcosystemSlide {
+  id: "planificar" | "entrenar" | "registrar" | "evaluar" | "continuar";
+  label: string;
+  role: string;
+  roleTone: "trainer" | "athlete" | "shared";
+  title: string;
+  description: string;
+  media: {
+    src: string;
+    alt: string;
+    kind: "web" | "mobile";
+    crop: "web-create-template" | "mobile-routine" | "mobile-register" | "mobile-evaluate" | "mobile-history-month";
+    width: number;
+    height: number;
+  };
+}
+
+
+export interface VisionPrinciple {
+  label: string;
+  title: string;
+  description: string;
+}
+
+export interface VisionSection {
+  eyebrow: string;
+  title: string;
+  description: string;
+  principles: VisionPrinciple[];
+  closing: string;
+  finalStatement: string;
+}
 export interface FooterContent {
   description: string;
   links: LandingLink[];
@@ -75,4 +104,5 @@ export interface PlansSection {
   description: string;
   plans: PricingPlan[];
 }
+
 

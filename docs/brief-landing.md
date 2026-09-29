@@ -40,6 +40,20 @@ La demo se implementa en `TrainingDemo.tsx` con HTML, CSS y estado local, sin au
 
 Debe seguir siendo operable con mouse, teclado y pantalla táctil, tener labels visibles y `aria-live`, y respetar `prefers-reduced-motion`.
 
+## Recorrido del ecosistema
+
+La sección `#ecosistema` explica la continuidad entre la plataforma web del entrenador y la app del atleta mediante cinco momentos: planificar, entrenar, registrar, evaluar y continuar.
+
+- Planificar muestra la creación de una plantilla y la selección de ejercicios desde la web.
+- Entrenar presenta la rutina organizada por días en la app.
+- Registrar muestra series, peso, repeticiones y RIR durante una sesión.
+- Evaluar utiliza el resumen posterior de dificultad, ánimo y cansancio. Estas respuestas se presentan como parte del seguimiento personal del atleta y no se afirma que se compartan con el entrenador.
+- Continuar muestra el historial mensual y diario de actividad.
+
+En escritorio el recorrido es horizontal. En celular se transforma en una secuencia vertical manteniendo el mismo orden semántico. Los colores diferencian entrenador, atleta e información compartida, pero cada rol también se identifica mediante texto visible.
+
+Las capturas aprobadas viven en `public/product/ecosystem/`. Se muestran mediante recortes CSS no destructivos para ocultar barras del sistema, navegación y avatares; los originales se conservan completos.
+
 ## Requisitos funcionales iniciales
 
 - Responsive desde 320 px.
