@@ -84,7 +84,10 @@ export interface VisionSection {
 export interface FooterContent {
   description: string;
   links: LandingLink[];
+  legalLinks: LandingLink[];
   contact: string;
+  instagram: LandingLink;
+  appLinks: LandingLink[];
 }
 
 export interface PricingPlan {

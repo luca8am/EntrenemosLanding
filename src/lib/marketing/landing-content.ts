@@ -283,23 +283,35 @@ const plans: PlansSection = {
 };
 
 const finalCta = {
-  eyebrow: "Listo para el siguiente paso",
-  title: "Entrenemos para ordenar, acompañar y progresar.",
+  eyebrow: "Planes para entrenadores",
+  title: "Probá Entrenemos en tu asesoría.",
   description:
-    "Unite hoy a la plataforma que conecta a entrenadores y atletas para llevar un registro claro, ordenado y efectivo de cada entrenamiento.",
-  primaryAction: { label: "Ver propuesta completa", href: "#inicio" },
+    "Empezá con 15 días gratis para gestionar hasta 5 alumnos. Después, elegí el plan que acompañe el tamaño de tu equipo.",
   secondaryAction: { label: "Escribir a soporte", href: "mailto:soporte@entrenemos.app" },
 };
 
 const footer: FooterContent = {
   description:
-    "Landing pública del ecosistema Entrenemos. Diseñada para iterar rápido hoy y portarse fácil mañana.",
+    "Entrenamiento, seguimiento y contexto compartido en un mismo lugar.",
   contact: "soporte@entrenemos.app",
+  instagram: {
+    label: "@entrenemos.8am",
+    href: "https://www.instagram.com/entrenemos.8am/",
+  },
+  appLinks: [
+    { label: "App Store", href: "https://apps.apple.com/app/entrenemos/id6782174564" },
+    { label: "Google Play", href: "https://play.google.com/store/apps/details?id=com.entrenemos.app" },
+  ],
   links: [
     { label: "Inicio", href: "#inicio" },
     { label: "Enfoque", href: "#enfoque" },
     { label: "Ecosistema", href: "#ecosistema" },
     { label: "Visión", href: "#vision" },
+    { label: "Planes para entrenadores", href: "#planes-entrenadores" },
+  ],
+  legalLinks: [
+    { label: "Política de privacidad", href: "https://www.8am-dev.com/entrenemos/privacy" },
+    { label: "Términos y condiciones", href: "https://www.8am-dev.com/entrenemos/terms" },
   ],
 };
 
