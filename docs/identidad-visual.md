@@ -45,6 +45,16 @@ La familia se eligió por su equilibrio entre una presencia tecnológica y empre
 
 Usar entradas cortas y discretas (150–400 ms). El movimiento debe reforzar jerarquía y feedback. Respetar `prefers-reduced-motion` y evitar animaciones continuas que compitan con el mensaje.
 
+## Sistema de continuidad de Visión
+
+El circuito de `#vision` es un recurso identificable de la marca: dos recorridos bidireccionales conectan entrenador y atleta mediante un núcleo de Entrenemos. La retícula, los conectores y los símbolos de planificación, comunicación, registro y seguimiento deben sentirse precisos y tecnológicos sin convertirse en un dashboard ni en ciencia ficción.
+
+En escritorio el circuito se desarrolla horizontalmente; en celular adopta un recorrido vertical. Entrenador y atleta conservan el mismo peso visual y las etiquetas siguen visibles para que el significado no dependa del color.
+
+## Densidad del cierre
+
+El footer es una superficie utilitaria, no una sección narrativa. Debe priorizar lectura rápida, targets táctiles claros y jerarquía contenida: franja social breve, navegación compacta, enlaces de descarga y barra legal. No usar títulos de escala hero, watermarks gigantes, scroll horizontal ni espacios verticales equivalentes a una pantalla.
+
 ## Cierre de Enfoque
 
 El bloque final de `#enfoque` funciona como manifiesto de marca, no como una tarjeta informativa convencional. Su composición aprobada presenta:

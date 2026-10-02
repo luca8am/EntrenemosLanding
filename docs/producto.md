@@ -59,3 +59,21 @@ Es una dirección de copy, no un eslogan aprobado. El nombre “Entrenemos” fu
 - Testimonios ficticios.
 - Funciones futuras presentadas como disponibles.
 
+## Oferta pública para entrenadores
+
+La landing comunica una prueba gratuita de 15 días para gestionar hasta 5 alumnos con todas las funciones disponibles. Después presenta tres capacidades, sin diferencias funcionales entre ellas:
+
+- Coach: hasta 15 alumnos.
+- Plus: hasta 25 alumnos.
+- Pro: hasta 50 alumnos.
+
+Los precios, medios de pago, condiciones de renovación y flujo de contratación todavía no están definidos y no deben inferirse ni publicarse. Mientras no exista un destino real para comenzar la prueba, la oferta es informativa y el contacto disponible es soporte.
+
+## Canales públicos confirmados
+
+- Instagram: `@entrenemos.8am`.
+- Soporte: `soporte@entrenemos.app`.
+- Aplicación iOS: `entrenemos/id6782174564`.
+- Aplicación Android: paquete `com.entrenemos.app`.
+- Política de privacidad y términos: documentos publicados por 8AM Dev para Entrenemos.
+

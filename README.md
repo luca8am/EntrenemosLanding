@@ -23,7 +23,16 @@ La implementación está pensada para que luego sea fácil:
 - `src/app`: entrypoints, metadata y páginas.
 - `src/components/marketing`: secciones de la landing.
 - `src/lib/marketing`: contenido y tipos desacoplados del layout.
+- `src/styles`: tokens, base global y estilos específicos de marketing y login.
 - `public/brand`: logos y assets públicos.
+
+## Superficies públicas actuales
+
+- `/`: landing con Hero, Enfoque, Ecosistema, Visión, planes para entrenadores y footer.
+- `/design-system`: referencia viva de tokens, tipografía y componentes reales.
+- `/login`: acceso a la experiencia web.
+
+El cierre comercial ofrece una prueba informativa de 15 días para hasta 5 alumnos y presenta Coach, Plus y Pro según capacidad. Los precios, pagos y contratación siguen fuera de alcance hasta contar con definiciones comerciales y destinos reales.
 
 ## Criterios de portabilidad
 

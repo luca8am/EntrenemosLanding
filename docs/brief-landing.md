@@ -10,11 +10,11 @@ Presentar Entrenemos con claridad, generar interés y conducir a una acción con
 2. Hero con propuesta de valor y demo interactiva del registro de entrenamiento.
 3. Enfoque: fragmentación actual, conexión del proceso y manifiesto de marca.
 4. Ecosistema: relación entre la experiencia mobile del atleta y la plataforma web del entrenador.
-5. Visión: contenedor estructural pendiente de contenido aprobado.
-6. CTA final.
-7. Footer.
+5. Visión: declaración de producto y circuito compartido entre entrenador y atleta.
+6. Planes para entrenadores: tarjeta expandible con prueba gratuita y capacidades.
+7. Footer compacto con acceso social, navegación, descargas, soporte y enlaces legales.
 
-Las secciones anteriores de problema y solución quedaron unificadas en `#enfoque`. Los contenidos de atletas/entrenadores y planes se conservan en código para evaluar su reutilización, pero no forman parte de la navegación ni de la arquitectura principal actual.
+Las secciones anteriores de problema y solución quedaron unificadas en `#enfoque`. Los planes forman parte de la arquitectura actual mediante `#planes-entrenadores`.
 
 ## Copy de trabajo
 
@@ -54,6 +54,34 @@ En escritorio el recorrido es horizontal. En celular se transforma en una secuen
 
 Las capturas aprobadas viven en `public/product/ecosystem/`. Se muestran mediante recortes CSS no destructivos para ocultar barras del sistema, navegación y avatares; los originales se conservan completos.
 
+## Visión
+
+La sección `#vision` posiciona a Entrenemos como infraestructura para el trabajo compartido. El contenido superior mantiene una composición editorial asimétrica y el cierre visual utiliza un circuito vectorial de continuidad: entrenador y atleta tienen el mismo peso, Entrenemos organiza el contexto compartido y los nodos representan planificación, comunicación, registro y seguimiento.
+
+El recurso es complementario, funciona sin JavaScript, no depende solamente del color y se transforma en un recorrido vertical en pantallas pequeñas. No debe volver al esquema de tres tarjetas ni a una onda decorativa sin significado.
+
+## Planes para entrenadores
+
+La tarjeta `#planes-entrenadores` se muestra cerrada al cargar y revela su contenido mediante un botón accesible con `aria-expanded` y `aria-controls`.
+
+- Prueba gratuita: 15 días, hasta 5 alumnos y acceso a todas las funciones.
+- Coach: hasta 15 alumnos.
+- Plus: hasta 25 alumnos.
+- Pro: hasta 50 alumnos.
+
+Los tres planes pagos incluyen las mismas funciones; solamente cambia la cantidad máxima de alumnos. No se muestran precios, checkout ni botones de contratación hasta que existan definiciones y destinos reales.
+
+## Footer y destinos públicos
+
+El cierre es un único footer compacto: franja social, marca/contacto, navegación, descargas e información legal. No utiliza watermark, alturas basadas en viewport ni navegación horizontal desplazable.
+
+- Instagram: `https://www.instagram.com/entrenemos.8am/`
+- App Store: `https://apps.apple.com/app/entrenemos/id6782174564`
+- Google Play: `https://play.google.com/store/apps/details?id=com.entrenemos.app`
+- Privacidad: `https://www.8am-dev.com/entrenemos/privacy`
+- Términos: `https://www.8am-dev.com/entrenemos/terms`
+- Soporte: `soporte@entrenemos.app`, con enlace y acción para copiar.
+
 ## Requisitos funcionales iniciales
 
 - Responsive desde 320 px.
@@ -68,13 +96,13 @@ Las capturas aprobadas viven en `public/product/ecosystem/`. Se muestran mediant
 ## Decisiones pendientes
 
 - Audiencia primaria de la primera versión: atletas, entrenadores o ambas.
-- CTA principal y destino real.
-- Estado de disponibilidad en tiendas y URLs verificadas.
-- Modelo comercial, precios y eventual lista de espera.
+- Destino definitivo del CTA principal del hero.
+- Verificación periódica de disponibilidad de las URLs de las tiendas.
+- Precios, medios de pago, checkout y flujo real para iniciar la prueba gratuita.
 - Capturas aprobadas y datos que deban ocultarse.
 - Testimonios, métricas y logos de clientes reales.
 - Dominio final y relación entre landing, login y aplicación web.
-- Textos legales, privacidad, términos y cookies.
+- Necesidad y alcance de una política de cookies según las integraciones futuras.
 - Framework, hosting, CMS, formularios y analítica.
 
 ## Definición mínima de terminado
