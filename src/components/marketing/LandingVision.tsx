@@ -59,13 +59,13 @@ export function LandingVision() {
               <path d="M 0 0 L 10 5 L 0 10 z" fill="#8dbcf8" />
             </marker>
           </defs>
-          <path className="vision-bridge__rail" d="M148 164 H1052" />
-          <path className="vision-bridge__track vision-bridge__track--trainer" d="M96 176 C278 42 430 72 600 154 S914 278 1104 166" markerEnd="url(#vision-arrow-forward)" pathLength="1" />
-          <path className="vision-bridge__track vision-bridge__track--athlete" d="M1104 194 C920 62 770 90 600 174 S286 298 96 188" markerEnd="url(#vision-arrow-back)" pathLength="1" />
+          <path className="vision-bridge__rail" d="M148 165 H1052" />
+          <path className="vision-bridge__track vision-bridge__track--trainer" d="M96 165 C264 15 432 15 600 165 S936 315 1104 165" markerEnd="url(#vision-arrow-forward)" pathLength="1" />
+          <path className="vision-bridge__track vision-bridge__track--athlete" d="M1104 165 C936 15 768 15 600 165 S264 315 96 165" markerEnd="url(#vision-arrow-back)" pathLength="1" />
           <path className="vision-bridge__direction vision-bridge__direction--forward" d="M492 112 C532 98 566 108 590 132" markerEnd="url(#vision-arrow-forward)" />
-          <path className="vision-bridge__direction vision-bridge__direction--back" d="M708 220 C668 234 634 222 610 198" markerEnd="url(#vision-arrow-back)" />
+          <path className="vision-bridge__direction vision-bridge__direction--back" d="M708 218 C668 232 634 222 610 198" markerEnd="url(#vision-arrow-back)" />
           <g className="vision-bridge__ticks">
-            <path d="M250 154v20 M322 154v20 M878 154v20 M950 154v20" />
+            <path d="M250 155v20 M322 155v20 M878 155v20 M950 155v20" />
           </g>
         </svg>
 
@@ -75,9 +75,21 @@ export function LandingVision() {
           preserveAspectRatio="none"
           aria-hidden="true"
         >
+          <defs>
+            <linearGradient id="vision-trainer-signal-mobile" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stopColor="#67e8f9" stopOpacity="0.35" />
+              <stop offset="0.5" stopColor="#0d93f2" />
+              <stop offset="1" stopColor="#93c5fd" stopOpacity="0.8" />
+            </linearGradient>
+            <linearGradient id="vision-athlete-signal-mobile" x1="0" y1="1" x2="0" y2="0">
+              <stop offset="0" stopColor="#93c5fd" stopOpacity="0.35" />
+              <stop offset="0.5" stopColor="#0d93f2" />
+              <stop offset="1" stopColor="#67e8f9" stopOpacity="0.8" />
+            </linearGradient>
+          </defs>
           <path className="vision-bridge__rail" d="M160 46 V714" />
-          <path className="vision-bridge__track vision-bridge__track--trainer" d="M142 52 C54 174 82 282 154 378 S248 590 166 708" pathLength="1" />
-          <path className="vision-bridge__track vision-bridge__track--athlete" d="M178 708 C266 586 238 478 166 382 S72 170 154 52" pathLength="1" />
+          <path className="vision-bridge__track vision-bridge__track--trainer" d="M160 52 C16 161 16 270 160 380 S304 599 160 708" pathLength="1" />
+          <path className="vision-bridge__track vision-bridge__track--athlete" d="M160 708 C16 599 16 490 160 380 S304 161 160 52" pathLength="1" />
           <path className="vision-bridge__direction vision-bridge__direction--forward" d="M112 310 C92 340 104 366 138 382" />
           <path className="vision-bridge__direction vision-bridge__direction--back" d="M208 452 C228 422 216 396 182 380" />
         </svg>

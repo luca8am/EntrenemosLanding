@@ -2296,6 +2296,12 @@ p {
   stroke-linejoin: round;
 }
 
+.vision-bridge__actor > span:last-child {
+  padding: 4px 6px;
+  border-radius: 6px;
+  background: #07151e;
+}
+
 .vision-bridge__actor strong,
 .vision-bridge__actor small,
 .vision-bridge__core strong,
@@ -2327,6 +2333,7 @@ p {
   display: grid;
   justify-items: center;
   width: 170px;
+  height: 96px;
   color: #0d93f2;
   text-align: center;
   transform: translate(-50%, -50%);
@@ -2369,21 +2376,40 @@ p {
 }
 
 .vision-bridge__core strong {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
   margin-top: 10px;
-  color: #f7fbff;
+  width: max-content;
+  padding: 2px 4px;
+  border-radius: 6px;
+  background: #07151e;
+  color: var(--color-action-primary);
   font-size: 0.84rem;
   font-weight: 850;
   letter-spacing: 0.11em;
   text-transform: uppercase;
+  text-shadow: 0 1px 8px rgba(56, 182, 255, 0.2);
+  box-shadow: inset 0 1px rgba(56, 182, 255, 0.24);
 }
 
 .vision-bridge__core small {
-  margin-top: 5px;
+  position: absolute;
+  top: calc(100% + 36px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  margin-top: 0;
+  padding: 2px 4px;
+  border-radius: 6px;
+  background: #07151e;
   color: #75caf7;
   font-size: 0.61rem;
   font-weight: 760;
   letter-spacing: 0.09em;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .vision-bridge__signal {
@@ -2464,6 +2490,9 @@ p {
 }
 
 .vision-bridge__signal small {
+  padding: 2px 4px;
+  border-radius: 4px;
+  background: #07151e;
   color: #c7d9e4;
   font-size: 0.62rem;
   font-weight: 720;
@@ -2560,11 +2589,8 @@ p {
   }
 
   .vision-bridge {
-    display: grid;
+    display: block;
     height: 720px;
-    grid-template-rows: auto auto auto auto auto;
-    gap: 26px;
-    align-content: space-between;
     margin: 36px -20px 0;
     padding: 42px 28px 48px;
     border-top-color: rgba(125, 211, 252, 0.16);
@@ -2584,12 +2610,12 @@ p {
     display: block;
   }
 
-  .vision-bridge__actor,
-  .vision-bridge__core,
-  .vision-bridge__signal {
-    position: relative;
-    inset: auto;
-    transform: none;
+  .vision-bridge__circuit--mobile .vision-bridge__track--trainer {
+    stroke: url(#vision-trainer-signal-mobile);
+  }
+
+  .vision-bridge__circuit--mobile .vision-bridge__track--athlete {
+    stroke: url(#vision-athlete-signal-mobile);
   }
 
   .vision-bridge__actor {
@@ -2598,15 +2624,16 @@ p {
   }
 
   .vision-bridge__actor--trainer {
-    justify-self: start;
+    top: 42px;
+    left: 28px;
+    transform: none;
   }
 
   .vision-bridge__actor--athlete {
-    justify-self: end;
-  }
-
-  .vision-bridge__core {
-    justify-self: center;
+    top: auto;
+    right: 28px;
+    bottom: 48px;
+    transform: none;
   }
 
   .vision-bridge__signal {
@@ -2635,12 +2662,12 @@ p {
   }
 
   .vision-bridge__signal--plan {
-    top: 25%;
+    top: 20%;
     left: 14%;
   }
 
   .vision-bridge__signal--communication {
-    top: 35%;
+    top: 27%;
     right: 11%;
     bottom: auto;
     left: auto;
