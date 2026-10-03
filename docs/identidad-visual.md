@@ -42,7 +42,8 @@ Los tokens `--font-size-hero`, `--font-size-section`, `--font-size-subsection` y
 
 En Visión, la bajada se alinea al centro vertical del título en escritorio. El manifiesto de Enfoque conserva su énfasis editorial mediante párrafos, sin alterar la jerarquía de encabezados.
 
-- Radios actuales: botones `10px`, inputs `12px`, paneles `14px`, cards `18px`, diálogos `20px` y bloques destacados `24px`.
+- Radios de referencia del producto web: botones `10px`, inputs `12px`, paneles `14px`, cards `18px`, diálogos `20px` y bloques destacados `24px`.
+- La landing conserva su propia escala en `src/styles/tokens.css`: controles `12px`, radio pequeño `16px`, medio `22px` y grande `30px`, además de ajustes por sección. La unificación de radios entre productos sigue pendiente.
 - Bordes sutiles blancos al 6–10%.
 - Sombras oscuras amplias y suaves.
 - Composición modular tipo bento para explicar beneficios o capturas del producto.
@@ -56,6 +57,8 @@ Usar entradas cortas y discretas (150–400 ms). El movimiento debe reforzar jer
 El circuito de `#vision` es un recurso identificable de la marca: dos recorridos bidireccionales conectan entrenador y atleta mediante un núcleo de Entrenemos. La retícula, los conectores y los símbolos de planificación, comunicación, registro y seguimiento deben sentirse precisos y tecnológicos sin convertirse en un dashboard ni en ciencia ficción.
 
 En escritorio el circuito se desarrolla horizontalmente; en celular adopta un recorrido vertical. Entrenador y atleta conservan el mismo peso visual y las etiquetas siguen visibles para que el significado no dependa del color.
+
+El nombre central “Entrenemos” usa `#0D93F2`, con un detalle luminoso `#38B6FF`. Las etiquetas centrales llevan fondo oscuro `#07151E` para que los trazos del circuito no crucen las letras.
 
 ## Densidad del cierre
 
@@ -72,6 +75,8 @@ El bloque final de `#enfoque` funciona como manifiesto de marca, no como una tar
 
 En tablet y celular la composición pasa a flujo vertical. El efecto luminoso no tiene animación permanente.
 
+El fondo del manifiesto usa un degradado tenue de `#162028` hacia `#101B22`, con borde azul al 22 %. Se evita el negro casi puro para integrar este cierre con el azul petróleo del resto de la landing; el énfasis luminoso permanece en “Progresar”.
+
 ## Logos
 
 - `logo.png`: variante monocromática azul, alineada con la paleta digital. Usarla por defecto.
@@ -82,14 +87,20 @@ Pendientes de marca:
 - Definir cuál variante es oficial.
 - Crear logotipo horizontal/símbolo + palabra “Entrenemos”.
 - Exportar SVG o fuente vectorial original si existe.
-- Preparar favicon, app icons y versiones para fondos claros/oscuros.
+- Definir versiones para fondos claros/oscuros. La landing ya incluye favicon y Apple icon derivados de la marca; no reemplazan los iconos de las aplicaciones.
 - Confirmar reglas de área de seguridad y tamaño mínimo.
 
 ## Fuente de los tokens
 
-Paleta relevada el 22 de junio de 2026 desde:
+Paleta relevada el 22 de junio de 2026 y contrastada nuevamente el 3 de octubre de 2026 desde:
 
 - `../EntrenemosWeb/src/app/globals.css`
 - `../GymApp/gym_app/lib/theme/app_colors.dart`
 - `../GymApp/gym_app/lib/theme/app_gradients.dart`
+
+La revisión de `../GymApp/gym_app/lib/theme/app_theme.dart` confirma `#0D93F2` como primario vigente y `#38B6FF` como variante clara. Fondo, superficie y superficie elevada oscuros coinciden con la web: `#101B22`, `#1B262E` y `#25313A`. La landing conserva además `#162028` como superficie alternativa web.
+
+Mobile también conserva `AppColors.primary = #3B82F6` y el gradiente `#2563EB` → `#3B82F6` → `#60A5FA`; el tema Material y algunos componentes todavía los usan. No constituyen una paleta completamente unificada. Para esta landing prevalecen el tema actual `AppTheme.primary` y el token web `--bento-primary`, ambos `#0D93F2`.
+
+La revisión de estilo también confirmó diferencias tipográficas: la web usa Inter y mobile usa Manrope como base, con fuentes puntuales como Lexend y Sora. La landing mantiene Plus Jakarta Sans por decisión aprobada. No se modificaron los repositorios vecinos; la normalización general de radios y trazos de gráficos queda como propuesta para otra pasada.
 

@@ -30,7 +30,7 @@ La implementación está pensada para que luego sea fácil:
 
 - `/`: landing con Hero, Enfoque, Ecosistema, Visión, planes para entrenadores y footer.
 - `/design-system`: referencia viva de tokens, tipografía y componentes reales.
-- `/login`: acceso a la experiencia web.
+- `/login`: página local informativa, excluida de indexación. El acceso para entrenadores dirige a `https://entrenemos.app/login`.
 
 El cierre comercial ofrece una prueba informativa de 15 días para hasta 5 alumnos y presenta Coach, Plus y Pro según capacidad. Los precios, pagos y contratación siguen fuera de alcance hasta contar con definiciones comerciales y destinos reales.
 
@@ -67,10 +67,11 @@ Remove-Item -LiteralPath .next -Recurse -Force
 npm run dev
 ```
 
-El repositorio está dentro de OneDrive. Si los errores reaparecen sin haber ejecutado dos procesos de Next en paralelo, pausar la sincronización durante el desarrollo o trabajar desde una carpeta local fuera de OneDrive evita bloqueos y sincronizaciones parciales de archivos temporales.
+Si el repositorio se usa dentro de OneDrive y los errores reaparecen sin haber ejecutado dos procesos de Next en paralelo, pausar la sincronización durante el desarrollo o trabajar desde una carpeta local fuera de OneDrive evita bloqueos y sincronizaciones parciales de archivos temporales.
 
 ## Documentación
 
+- [Cambios y validación del 3 de octubre de 2026](docs/cambios-2026-10-03.md)
 - [Contexto de producto](docs/producto.md)
 - [Identidad visual](docs/identidad-visual.md)
 - [Brief de implementación](docs/brief-landing.md)

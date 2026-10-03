@@ -16,6 +16,8 @@ Presentar Entrenemos con claridad, generar interés y conducir a una acción con
 
 Las secciones anteriores de problema y solución quedaron unificadas en `#enfoque`. Los planes forman parte de la arquitectura actual mediante `#planes-entrenadores`.
 
+En “Proceso fragmentado”, las cinco herramientas se presentan en una lista de filas completas, con iconos vectoriales diferentes: planilla con celdas, conversación, nota con esquina doblada, galería y calendario. El proceso conectado utiliza una lista ordenada de cuatro estaciones numeradas de 52 px, sin tarjetas individuales. En escritorio el camino recorre dos filas: Planificar → Entrenar arriba, gira hacia Registrar y termina en Progresar abajo. Las flechas indican el orden y la última estación se destaca con el primario de marca. En celular el camino es vertical. El cierre “Proceso compartido” queda 24 px debajo del recorrido.
+
 ## Copy de trabajo
 
 - Título del hero: “La nueva forma de entrenar.”
@@ -56,11 +58,17 @@ En escritorio el recorrido es horizontal. En celular se transforma en una secuen
 
 Las capturas aprobadas viven en `public/product/ecosystem/`. Se muestran mediante recortes CSS no destructivos para ocultar barras del sistema, navegación y avatares; los originales se conservan completos.
 
+El cierre “¿Entrenás por tu cuenta?” se presenta como un bloque destacado con título, bajada y botones de descarga de 68 × 68 px, usando únicamente los iconos de Apple y Google Play como contenido visible. Los destinos se reutilizan desde los enlaces de tiendas del footer. En celular los botones se ubican debajo del texto; en escritorio, a la derecha. El bloque tiene entre 36 y 56 px de separación superior y la transición hacia Visión se reduce a entre 40 y 72 px.
+
+La detección local del dispositivo destaca App Store en iPhone/iPad y Google Play en Android; la otra tienda se atenúa mediante un filtro gris suave. En escritorio, dispositivos no identificados o sin JavaScript, ambas mantienen igual énfasis. La detección no altera los destinos ni oculta opciones. Los enlaces incluyen nombres accesibles, foco visible y soporte para movimiento reducido. Los iconos se comparten con el footer.
+
 ## Visión
 
 La sección `#vision` posiciona a Entrenemos como infraestructura para el trabajo compartido. El contenido superior mantiene una composición editorial asimétrica y el cierre visual utiliza un circuito vectorial de continuidad: entrenador y atleta tienen el mismo peso, Entrenemos organiza el contexto compartido y los nodos representan planificación, comunicación, registro y seguimiento.
 
 El recurso es complementario, funciona sin JavaScript, no depende solamente del color y se transforma en un recorrido vertical en pantallas pequeñas. No debe volver al esquema de tres tarjetas ni a una onda decorativa sin significado.
+
+Las dos curvas del infinito son simétricas y comparten el centro exacto de sus respectivos SVG. El símbolo de Entrenemos se centra sobre esa intersección de manera independiente de sus textos, ubicados debajo. La variante mobile incluye sus propios gradientes. Las etiquetas tienen fondos oscuros para impedir que las líneas interfieran con su lectura.
 
 ## Planes para entrenadores
 
@@ -89,6 +97,8 @@ Los botones de descarga muestran el símbolo de Apple y el triángulo multicolor
 Las entradas del hero y la confirmación de la demo duran entre 220 y 380 ms. Los botones de tiendas y etapas tienen feedback breve de hover y pulsación. Estas animaciones respetan `prefers-reduced-motion` y no son continuas.
 
 El correo y su botón para copiar viven en la barra inferior, después del copyright; en celular se distribuyen en varias líneas. El crédito visible es “Un producto de 8AM”.
+
+En Información, Privacidad y Términos abren en otra pestaña y muestran una flecha a la derecha al hacer hover o recibir foco. Soporte conserva su enlace de correo y suma un botón de copia con icono, sin texto “Copiar”, a su derecha. En pantallas táctiles estos indicadores permanecen visibles. El botón de copia de la barra inferior también usa solo el icono. La confirmación se representa con un check y se anuncia al lector de pantalla; los errores conservan el correo disponible.
 
 El carrusel usa flechas y cinco puntos seleccionables sobre las capturas. Las etapas se identifican con número y nombre junto al texto activo y con etiquetas accesibles en los puntos; se elimina la fila inferior duplicada. El rol aparece a la derecha del número y nombre de la etapa. El marco de imágenes y la reserva de espacio para todos los textos mantienen estables el ancho, la altura y los controles entre etapas. Las imágenes se cargan de forma diferida. Los celulares son más compactos, incluyendo la demo del hero, con adaptación a notebooks de poca altura. En pantallas de más de 980 px de ancho y hasta 850 px de alto, el panel del carrusel parte de 520 px de alto.
 
