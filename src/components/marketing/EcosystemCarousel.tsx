@@ -6,10 +6,9 @@ import type { EcosystemSlide } from "@/lib/marketing/landing-types";
 
 interface Props {
   slides: EcosystemSlide[];
-  independentNote: string;
 }
 
-export function EcosystemCarousel({ slides, independentNote }: Props) {
+export function EcosystemCarousel({ slides }: Props) {
   const [activeIndex, setActiveIndex] = useState(0);
   const touchStart = useRef<{ x: number; y: number } | null>(null);
   const activeSlide = slides[activeIndex];
@@ -135,7 +134,6 @@ export function EcosystemCarousel({ slides, independentNote }: Props) {
         </div>
       </div>
 
-      <p className="ecosystem-independent-note">{independentNote}</p>
     </div>
   );
 }

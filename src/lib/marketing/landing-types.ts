@@ -29,7 +29,10 @@ export interface ScreensSection {
   eyebrow: string;
   title: string;
   description: string;
-  independentNote: string;
+  independentNote: {
+    title: string;
+    description: string;
+  };
   slides: EcosystemSlide[];
 }
 

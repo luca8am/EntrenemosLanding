@@ -53,7 +53,7 @@ export default function HomePage() {
       <main>
         <LandingHero section={landingContent.hero} />
         <LandingFocus section={landingContent.focus} />
-        <LandingScreens section={landingContent.screens} />
+        <LandingScreens section={landingContent.screens} appLinks={landingContent.footer.appLinks} />
         <LandingVision />
         <LandingCta section={landingContent.finalCta} />
       </main>

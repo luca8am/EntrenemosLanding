@@ -42,8 +42,10 @@ const screens: ScreensSection = {
   title: "Un mismo proceso, compartido entre atleta y entrenador.",
   description:
     "El entrenador planifica y asigna desde la web. El atleta lleva esa rutina a cada sesión desde la app, registra lo que hizo y evalúa cómo se sintió. Así, ambos cuentan con más contexto para entender el progreso y preparar lo que sigue.",
-  independentNote:
-    "¿Entrenás por tu cuenta? También podés usar Entrenemos para organizar, registrar y seguir tu propio proceso.",
+  independentNote: {
+    title: "¿Entrenás por tu cuenta?",
+    description: "También podés usar Entrenemos para organizar, registrar y seguir tu propio proceso.",
+  },
   slides: [
     {
       id: "planificar",

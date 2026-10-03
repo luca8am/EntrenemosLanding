@@ -1,11 +1,13 @@
-import type { ScreensSection } from "@/lib/marketing/landing-types";
+import type { LandingLink, ScreensSection } from "@/lib/marketing/landing-types";
 import { EcosystemCarousel } from "./EcosystemCarousel";
+import { IndependentTrainingNote } from "./IndependentTrainingNote";
 
 interface Props {
   section: ScreensSection;
+  appLinks: LandingLink[];
 }
 
-export function LandingScreens({ section }: Props) {
+export function LandingScreens({ section, appLinks }: Props) {
   return (
     <section className="section ecosystem" id="ecosistema" aria-labelledby="screens-title">
       <header className="section-heading ecosystem-heading">
@@ -14,7 +16,8 @@ export function LandingScreens({ section }: Props) {
         <p>{section.description}</p>
       </header>
 
-      <EcosystemCarousel slides={section.slides} independentNote={section.independentNote} />
+      <EcosystemCarousel slides={section.slides} />
+      <IndependentTrainingNote note={section.independentNote} appLinks={appLinks} />
     </section>
   );
 }
