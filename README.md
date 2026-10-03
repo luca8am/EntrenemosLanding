@@ -36,6 +36,10 @@ El cierre comercial ofrece una prueba informativa de 15 días para hasta 5 alumn
 
 ## Criterios de portabilidad
 
+La URL pública aprobada es **`https://landing.entrenemos.app`**, con este repositorio desplegado como proyecto independiente. El acceso para entrenadores sigue en `https://entrenemos.app/login`. La integración de `/landing` en EntrenemosWeb queda para otra etapa.
+
+La configuración de dominio, los pasos de publicación y el relevamiento de la ruta existente están en [Dominio y despliegue](docs/dominio-y-despliegue.md).
+
 - El contenido vive fuera del JSX.
 - Los tokens visuales siguen la dirección documentada en `docs/`.
 - No hay dependencias de backend ni contratos cerrados con la app principal.

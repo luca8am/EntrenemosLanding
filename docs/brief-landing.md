@@ -114,7 +114,7 @@ Las entradas de scroll son una mejora progresiva: sin JavaScript el contenido pe
 - Navegación por teclado y contraste WCAG AA.
 - Imágenes optimizadas y carga diferida fuera del hero.
 - Metadata SEO y Open Graph en español (`es_AR`).
-- URL pública prevista: `https://www.entrenemos.app`.
+- URL pública definida: `https://landing.entrenemos.app` (proyecto independiente).
 - Email documentado: `soporte@entrenemos.app`.
 - Analítica solo después de definir proveedor y consentimiento.
 - Lighthouse como control de calidad, apuntando a 90+ en rendimiento, accesibilidad, buenas prácticas y SEO.
@@ -127,16 +127,16 @@ Las entradas de scroll son una mejora progresiva: sin JavaScript el contenido pe
 - Precios, medios de pago, checkout y flujo real para iniciar la prueba gratuita.
 - Capturas aprobadas y datos que deban ocultarse.
 - Testimonios, métricas y logos de clientes reales.
-- Dominio final y relación entre landing, login y aplicación web.
+- Conexión del subdominio aprobado en Vercel y DNS; integración futura de `/landing` en EntrenemosWeb fuera del alcance actual.
 - Necesidad y alcance de una política de cookies según las integraciones futuras.
-- Framework, hosting, CMS, formularios y analítica.
+- Conexión del dominio al proyecto existente en Vercel, CMS, formularios y analítica.
 
 ## Definición mínima de terminado
 
 ### SEO implementado
 
 - Un H1 en la landing, H2 para las secciones y H3 para contenidos subordinados. El texto de la demo no se presenta como sección independiente.
-- Título y descripción públicos centralizados en `src/lib/marketing/site-config.ts`, con canonical de la home en `https://www.entrenemos.app/`.
+- Título y descripción públicos centralizados en `src/lib/marketing/site-config.ts`, con canonical de la home en `https://landing.entrenemos.app/`.
 - `robots.txt` permite rastreo y enlaza `sitemap.xml`, que enumera solo la landing. `/login` y `/design-system` llevan `noindex`; no se bloquean por robots para que los buscadores puedan leer esa directiva.
 - Datos estructurados WebSite y Organization con nombre, URL, logo, soporte y perfil social documentados. No se agregan reseñas, precios ni métricas.
 - Favicon y Apple icon derivados de la marca; imagen social de 1200 × 630 px para Open Graph y Twitter.
