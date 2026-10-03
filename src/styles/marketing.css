@@ -3252,10 +3252,12 @@ p {
 
 .fat-footer__contact button {
   display: inline-flex;
+  width: 44px;
   min-height: 44px;
-  gap: 7px;
+  flex: 0 0 44px;
   align-items: center;
-  padding: 0 11px;
+  justify-content: center;
+  padding: 10px;
   color: #9ecbe4;
   border: 1px solid rgba(125, 211, 252, 0.16);
   border-radius: 11px;
@@ -3272,6 +3274,11 @@ p {
   color: #e9f8ff;
   border-color: rgba(125, 211, 252, 0.48);
   background: rgba(13, 147, 242, 0.13);
+}
+
+.fat-footer__contact button:focus-visible {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 3px;
 }
 
 .fat-footer__contact button svg {
@@ -3440,6 +3447,53 @@ p {
   color: #67d5ff;
   text-decoration: underline;
   text-decoration-thickness: 1px;
+}
+
+.fat-footer__external-link svg {
+  width: 17px;
+  height: 17px;
+  margin-left: 8px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0;
+  transform: translate(-2px, 2px);
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+
+.fat-footer__nav .fat-footer__contact {
+  gap: 6px;
+}
+
+.fat-footer__nav .fat-footer__contact button {
+  opacity: 0;
+  transition: opacity 160ms ease, color 160ms ease, background 160ms ease;
+}
+
+.fat-footer__external-link:hover svg,
+.fat-footer__external-link:focus-visible svg,
+.fat-footer__nav .fat-footer__contact:hover button,
+.fat-footer__nav .fat-footer__contact:focus-within button {
+  opacity: 1;
+  transform: none;
+}
+
+@media (hover: none) {
+  .fat-footer__external-link svg,
+  .fat-footer__nav .fat-footer__contact button {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fat-footer__external-link svg,
+  .fat-footer__nav .fat-footer__contact button {
+    transition: none;
+    transform: none;
+  }
 }
 
 .fat-footer__bottom {
