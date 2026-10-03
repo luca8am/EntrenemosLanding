@@ -6,11 +6,11 @@ interface Props {
 }
 
 const tools = [
-  { name: "Planillas", purpose: "Rutinas", glyph: "sheet" },
-  { name: "WhatsApp", purpose: "Consultas", glyph: "message" },
-  { name: "Notas", purpose: "Pesos y repeticiones", glyph: "note" },
-  { name: "Galería", purpose: "Fotos de progreso", glyph: "gallery" },
-  { name: "Calendario", purpose: "Seguimiento", glyph: "calendar" },
+  { name: "Planillas", purpose: "Rutinas", icon: "M4 4h16v16H4zM4 9h16M4 14h16M9 4v16" },
+  { name: "WhatsApp", purpose: "Consultas", icon: "M4 5h16v12H9l-5 3zM8 9h8M8 13h5" },
+  { name: "Notas", purpose: "Pesos y repeticiones", icon: "M5 3h10l4 4v14H5zM15 3v5h4M9 12h6M9 16h4" },
+  { name: "Galería", purpose: "Fotos de progreso", icon: "M3 4h18v16H3zM3 16l6-6 4 4 3-3 5 5M16 8h.01" },
+  { name: "Calendario", purpose: "Seguimiento", icon: "M4 5h16v16H4zM8 3v4M16 3v4M4 10h16M8 14h2M14 14h2M8 17h2" },
 ];
 
 const capabilities = ["Planificar", "Entrenar", "Registrar", "Progresar"];
@@ -38,7 +38,9 @@ export function LandingFocus({ section }: Props) {
           <ul className="focus-tool-list" aria-label="Herramientas separadas">
             {tools.map((tool) => (
               <li key={tool.name}>
-                <span className={`focus-tool-glyph ${tool.glyph}`} aria-hidden="true" />
+                <span className="focus-tool-glyph" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d={tool.icon} /></svg>
+                </span>
                 <span>
                   <strong>{tool.name}</strong>
                   <small>{tool.purpose}</small>
@@ -75,14 +77,20 @@ export function LandingFocus({ section }: Props) {
             <p>{section.solutionDescription}</p>
           </div>
 
-          <ul className="focus-capabilities" aria-label="Proceso conectado">
-            {capabilities.map((capability, index) => (
-              <li key={capability}>
-                <span>{index + 1}</span>
-                <strong>{capability}</strong>
-              </li>
-            ))}
-          </ul>
+          <div className="focus-path">
+            <svg className="focus-path__route" viewBox="0 0 1000 208" preserveAspectRatio="none" aria-hidden="true">
+              <path className="focus-path__line" d="M250 26H750Q940 26 940 88Q940 150 750 150H250" />
+              <path className="focus-path__arrows" d="m488 20 12 6-12 6m24 112-12 6 12 6" />
+            </svg>
+            <ol className="focus-capabilities" aria-label="Proceso conectado">
+              {capabilities.map((capability, index) => (
+                <li key={capability}>
+                  <span aria-hidden="true">{index + 1}</span>
+                  <strong>{capability}</strong>
+                </li>
+              ))}
+            </ol>
+          </div>
 
           <div className="focus-shared-process">
             <span>Entrenador</span>

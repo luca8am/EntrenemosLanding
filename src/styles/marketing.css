@@ -1113,127 +1113,62 @@ p {
 
 .focus-tool-list {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
+  grid-template-columns: 1fr;
 }
 
 .focus-tool-list li {
   display: flex;
   align-items: center;
   gap: 11px;
-  min-height: 68px;
-  padding: 11px 12px;
-  border: 1px solid rgba(255, 255, 255, 0.075);
-  border-radius: 15px;
-  background: rgba(8, 15, 20, 0.58);
+  min-height: 52px;
+  padding: 9px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.075);
 }
 
-.focus-tool-list li:nth-child(2) {
-  transform: translateY(8px);
-}
-
-.focus-tool-list li:nth-child(4) {
-  transform: translateY(8px);
-}
-
-.focus-tool-list li:nth-child(5) {
-  grid-column: 1 / -1;
-  width: calc(50% - 5px);
+.focus-tool-list li:last-child {
+  border-bottom: 0;
 }
 
 .focus-tool-list li > span:last-child {
   display: grid;
+  flex: 1;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  align-items: center;
   min-width: 0;
-  gap: 2px;
+  gap: 12px;
 }
 
 .focus-tool-list strong {
-  overflow: hidden;
   color: #edf4f9;
   font-size: 0.83rem;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .focus-tool-list small {
-  overflow: hidden;
   color: #9babb9;
   font-size: 0.7rem;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  text-align: right;
 }
 
 .focus-tool-glyph {
-  position: relative;
-  display: block;
+  display: grid;
+  place-items: center;
   width: 34px;
   height: 34px;
   flex: 0 0 auto;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 10px;
   background: #25313a;
+  color: #a8bbc9;
 }
 
-.focus-tool-glyph::before,
-.focus-tool-glyph::after {
-  content: "";
-  position: absolute;
-  background: #91a3b2;
-}
-
-.focus-tool-glyph.sheet::before,
-.focus-tool-glyph.note::before {
-  inset: 9px 8px auto;
-  height: 2px;
-  box-shadow: 0 5px 0 #91a3b2, 0 10px 0 #91a3b2;
-}
-
-.focus-tool-glyph.message::before {
-  inset: 8px 7px 10px;
-  border: 1px solid #91a3b2;
-  border-radius: 5px;
-  background: transparent;
-}
-
-.focus-tool-glyph.message::after {
-  left: 11px;
-  bottom: 7px;
-  width: 6px;
-  height: 6px;
-  background: #25313a;
-  border-bottom: 1px solid #91a3b2;
-  transform: rotate(35deg);
-}
-
-.focus-tool-glyph.gallery::before {
-  inset: 7px;
-  border: 1px solid #91a3b2;
-  border-radius: 4px;
-  background: transparent;
-}
-
-.focus-tool-glyph.gallery::after {
-  right: 10px;
-  bottom: 10px;
-  width: 13px;
-  height: 8px;
-  clip-path: polygon(0 100%, 42% 25%, 62% 58%, 78% 36%, 100% 100%);
-}
-
-.focus-tool-glyph.calendar::before {
-  inset: 9px 7px 7px;
-  border: 1px solid #91a3b2;
-  border-radius: 3px;
-  background:
-    linear-gradient(#91a3b2, #91a3b2) 0 5px / 100% 1px no-repeat;
-}
-
-.focus-tool-glyph.calendar::after {
-  top: 6px;
-  left: 11px;
-  width: 2px;
-  height: 6px;
-  box-shadow: 9px 0 0 #91a3b2;
+.focus-tool-glyph svg {
+  width: 21px;
+  height: 21px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .focus-roles {
@@ -1321,39 +1256,92 @@ p {
   line-height: 1.6;
 }
 
+.focus-path {
+  position: relative;
+  margin-top: 36px;
+}
+
+.focus-path__route {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 208px;
+  pointer-events: none;
+}
+
+.focus-path__line,
+.focus-path__arrows {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.focus-path__line {
+  stroke: rgba(56, 182, 255, 0.48);
+  stroke-width: 2;
+}
+
+.focus-path__arrows {
+  stroke: #62c1ff;
+  stroke-width: 2;
+}
+
 .focus-capabilities {
+  position: relative;
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 8px;
-  margin-top: 31px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  row-gap: 40px;
 }
 
 .focus-capabilities li {
+  position: relative;
   display: grid;
-  min-height: 104px;
-  padding: 13px 10px;
-  align-content: space-between;
-  border: 1px solid rgba(13, 147, 242, 0.22);
-  border-radius: 15px;
-  background: rgba(13, 147, 242, 0.075);
+  justify-items: center;
+  min-height: 84px;
+  align-content: start;
+  gap: 10px;
+  text-align: center;
+}
+
+.focus-capabilities li:nth-child(3) {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.focus-capabilities li:nth-child(4) {
+  grid-column: 1;
+  grid-row: 2;
 }
 
 .focus-capabilities span {
   display: grid;
-  width: 27px;
-  height: 27px;
+  width: 52px;
+  height: 52px;
   place-items: center;
-  border-radius: 9px;
+  border: 1px solid rgba(56, 182, 255, 0.65);
+  border-radius: 50%;
   color: #b8e2ff;
-  background: rgba(13, 147, 242, 0.18);
-  font-size: 0.68rem;
+  background: #102c3e;
+  font-size: 1rem;
   font-weight: 800;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.focus-capabilities li:last-child span {
+  border-color: var(--primary);
+  color: var(--color-text-on-action);
+  background: var(--primary);
 }
 
 .focus-capabilities strong {
   color: #e9f4fb;
-  font-size: 0.71rem;
+  font-size: 0.94rem;
   line-height: 1.2;
+}
+
+.focus-capabilities li:last-child strong {
+  color: var(--blue-400);
 }
 
 .focus-shared-process {
@@ -1361,8 +1349,7 @@ p {
   align-items: center;
   justify-content: center;
   gap: 9px;
-  margin-top: auto;
-  padding-top: 27px;
+  margin-top: 24px;
   color: #a9bac8;
   font-size: 0.68rem;
 }
@@ -1387,11 +1374,10 @@ p {
   overflow: hidden;
   margin-top: clamp(36px, 5vw, 64px);
   padding: clamp(46px, 6vw, 72px) clamp(26px, 7vw, 84px) clamp(28px, 4vw, 42px);
-  border: 1px solid rgba(125, 211, 252, 0.12);
+  border: 1px solid rgba(13, 147, 242, 0.22);
   border-radius: 24px;
   background:
-    linear-gradient(120deg, rgba(13, 147, 242, 0.045), transparent 44%),
-    #03090e;
+    linear-gradient(135deg, var(--color-bg-surface-alt), var(--color-bg-page) 70%);
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.24);
 }
 
@@ -1516,14 +1502,6 @@ p {
   .focus-flow {
     grid-template-columns: minmax(0, 1fr) 82px minmax(0, 1fr);
   }
-
-  .focus-capabilities {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .focus-capabilities li {
-    min-height: 82px;
-  }
 }
 
 @media (max-width: 820px) {
@@ -1592,30 +1570,45 @@ p {
     border-radius: 24px;
   }
 
-  .focus-tool-list {
-    grid-template-columns: 1fr;
-  }
-
-  .focus-tool-list li:nth-child(2),
-  .focus-tool-list li:nth-child(4) {
-    transform: none;
-  }
-
-  .focus-tool-list li:nth-child(5) {
-    grid-column: auto;
-    width: auto;
-  }
-
   .focus-roles {
     grid-template-columns: 1fr;
   }
 
   .focus-capabilities {
-    gap: 7px;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .focus-path__route {
+    display: none;
   }
 
   .focus-capabilities li {
-    min-height: 78px;
+    display: flex;
+    min-height: 52px;
+    align-items: center;
+    gap: 18px;
+    text-align: left;
+  }
+
+  .focus-capabilities li:nth-child(3),
+  .focus-capabilities li:nth-child(4) {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .focus-capabilities li:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 56px;
+    left: 25px;
+    width: 2px;
+    height: 12px;
+    background: rgba(56, 182, 255, 0.48);
+  }
+
+  .focus-capabilities strong {
+    font-size: 1rem;
   }
 
   .focus-shared-process {
