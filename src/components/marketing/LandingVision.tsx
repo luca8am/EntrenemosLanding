@@ -103,7 +103,7 @@ export function LandingVision() {
           <span className="vision-bridge__core-rings" aria-hidden="true">
             <span className="vision-bridge__core-orbit" />
             <Image
-              src="/brand/logo-primary.png"
+              src="/brand/logo-primary.webp"
               alt=""
               width={58}
               height={58}

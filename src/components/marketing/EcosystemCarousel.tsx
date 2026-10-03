@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { KeyboardEvent, PointerEvent, useMemo, useState } from "react";
+import { type KeyboardEvent, type PointerEvent, useRef, useState } from "react";
 import type { EcosystemSlide } from "@/lib/marketing/landing-types";
 
 interface Props {
@@ -11,14 +11,11 @@ interface Props {
 
 export function EcosystemCarousel({ slides, independentNote }: Props) {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const touchStart = useRef<{ x: number; y: number } | null>(null);
   const activeSlide = slides[activeIndex];
   const positionLabel = `${activeIndex + 1} de ${slides.length}`;
 
-  const announcement = useMemo(
-    () => `Etapa ${positionLabel}: ${activeSlide.label}`,
-    [activeSlide.label, positionLabel],
-  );
+  const announcement = `Etapa ${positionLabel}: ${activeSlide.label}`;
 
   function goTo(index: number) {
     setActiveIndex((index + slides.length) % slides.length);
@@ -41,18 +38,20 @@ export function EcosystemCarousel({ slides, independentNote }: Props) {
       return;
     }
 
-    setTouchStart(event.clientX);
+    touchStart.current = { x: event.clientX, y: event.clientY };
+    event.currentTarget.setPointerCapture(event.pointerId);
   }
 
   function handlePointerUp(event: PointerEvent<HTMLDivElement>) {
-    if (touchStart === null || event.pointerType === "mouse") {
+    if (touchStart.current === null || event.pointerType === "mouse") {
       return;
     }
 
-    const distance = event.clientX - touchStart;
-    setTouchStart(null);
+    const distance = event.clientX - touchStart.current.x;
+    const verticalDistance = event.clientY - touchStart.current.y;
+    touchStart.current = null;
 
-    if (Math.abs(distance) < 48) {
+    if (Math.abs(distance) < 48 || Math.abs(distance) <= Math.abs(verticalDistance)) {
       return;
     }
 
@@ -62,81 +61,78 @@ export function EcosystemCarousel({ slides, independentNote }: Props) {
   return (
     <div
       className="ecosystem-carousel"
+      role="region"
       aria-roledescription="carrusel"
       aria-label="Recorrido del ecosistema Entrenemos"
       tabIndex={0}
       onKeyDown={handleKeyDown}
-      onPointerDown={handlePointerDown}
-      onPointerUp={handlePointerUp}
     >
       <p className="sr-only" aria-live="polite" aria-atomic="true">
         {announcement}
       </p>
 
-      <div className="ecosystem-carousel__panel" key={activeSlide.id}>
-        <div className="ecosystem-carousel__copy">
-          <div className="ecosystem-carousel__meta">
-            <span>{String(activeIndex + 1).padStart(2, "0")}</span>
-            <strong>{activeSlide.label}</strong>
-          </div>
-          <p className="ecosystem-carousel__role" data-role={activeSlide.roleTone}>
-            {activeSlide.role}
-          </p>
-          <h3>{activeSlide.title}</h3>
-          <p>{activeSlide.description}</p>
+      <div className="ecosystem-carousel__panel">
+        <div className="ecosystem-carousel__copy-stage">
+          {slides.map((slide, index) => (
+            <div key={slide.id} className="ecosystem-carousel__copy" data-active={index === activeIndex} aria-hidden={index !== activeIndex}>
+              <div className="ecosystem-carousel__meta">
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <strong>{slide.label}</strong>
+                <span className="ecosystem-carousel__role" data-role={slide.roleTone}>
+                  {slide.role}
+                </span>
+              </div>
+              <h3>{slide.title}</h3>
+              <p>{slide.description}</p>
+            </div>
+          ))}
         </div>
 
-        <figure className={`ecosystem-carousel__media ecosystem-carousel__media--${activeSlide.media.kind}`}>
-          <div className={`ecosystem-device ecosystem-device--${activeSlide.media.kind}`} data-crop={activeSlide.media.crop}>
-            {activeSlide.media.kind === "web" ? (
-              <div className="ecosystem-browser-bar" aria-hidden="true">
-                <span />
-                <span />
-                <span />
-              </div>
-            ) : null}
-            <Image
-              src={activeSlide.media.src}
-              alt={activeSlide.media.alt}
-              width={activeSlide.media.width}
-              height={activeSlide.media.height}
-              sizes={
-                activeSlide.media.kind === "web"
-                  ? "(max-width: 760px) 92vw, 62vw"
-                  : "(max-width: 760px) 76vw, 360px"
-              }
-              priority={activeIndex === 0}
-            />
+        <div className="ecosystem-carousel__visual">
+          <div className="ecosystem-carousel__controls" aria-label="Controles del carrusel">
+            <button type="button" className="ecosystem-carousel__button" aria-label="Etapa anterior" onClick={() => goTo(activeIndex - 1)}>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6" /></svg>
+            </button>
+            <div className="ecosystem-carousel__dots" aria-label="Elegir una etapa">
+              {slides.map((slide, index) => (
+                <button type="button" key={slide.id} className="ecosystem-carousel__dot"
+                  title={`${String(index + 1).padStart(2, "0")} ${slide.label}`}
+                  aria-label={`Ver etapa ${index + 1}: ${slide.label}`}
+                  aria-current={index === activeIndex ? "step" : undefined}
+                  onClick={() => goTo(index)}><span aria-hidden="true" /></button>
+              ))}
+            </div>
+            <button type="button" className="ecosystem-carousel__button" aria-label="Etapa siguiente" onClick={() => goTo(activeIndex + 1)}>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6" /></svg>
+            </button>
           </div>
-        </figure>
-      </div>
-
-      <div className="ecosystem-carousel__controls" aria-label="Controles del carrusel">
-        <button type="button" className="ecosystem-carousel__button" onClick={() => goTo(activeIndex - 1)}>
-          Anterior
-        </button>
-        <span className="ecosystem-carousel__position" aria-label={`Etapa ${positionLabel}`}>
-          {positionLabel}
-        </span>
-        <button type="button" className="ecosystem-carousel__button" onClick={() => goTo(activeIndex + 1)}>
-          Siguiente
-        </button>
-      </div>
-
-      <div className="ecosystem-carousel__steps" aria-label="Seleccionar etapa">
-        {slides.map((slide, index) => (
-          <button
-            type="button"
-            key={slide.id}
-            className="ecosystem-carousel__step"
-            aria-label={`Ver etapa ${index + 1}: ${slide.label}`}
-            aria-current={index === activeIndex ? "step" : undefined}
-            onClick={() => goTo(index)}
+          <figure className={`ecosystem-carousel__media ecosystem-carousel__media--${activeSlide.media.kind}`}
+            onPointerDown={handlePointerDown}
+            onPointerUp={handlePointerUp}
+            onPointerCancel={() => { touchStart.current = null; }}
           >
-            <span>{String(index + 1).padStart(2, "0")}</span>
-            {slide.label}
-          </button>
-        ))}
+            <div key={activeSlide.id} className={`ecosystem-device ecosystem-device--${activeSlide.media.kind}`} data-crop={activeSlide.media.crop}>
+              {activeSlide.media.kind === "web" ? (
+                <div className="ecosystem-browser-bar" aria-hidden="true">
+                  <span />
+                  <span />
+                  <span />
+                </div>
+              ) : null}
+              <Image
+                src={activeSlide.media.src}
+                alt={activeSlide.media.alt}
+                width={activeSlide.media.width}
+                height={activeSlide.media.height}
+                sizes={
+                  activeSlide.media.kind === "web"
+                    ? "(max-width: 980px) 88vw, 58vw"
+                    : "(max-width: 760px) 210px, (max-height: 850px) 198px, 200px"
+                }
+              />
+            </div>
+          </figure>
+        </div>
       </div>
 
       <p className="ecosystem-independent-note">{independentNote}</p>

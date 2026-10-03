@@ -1,4 +1,10 @@
 import { ButtonLink } from "@/components/ui/Button";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Acceso para entrenadores",
+  robots: { index: false, follow: false },
+};
 
 export default function LoginPlaceholderPage() {
   return (

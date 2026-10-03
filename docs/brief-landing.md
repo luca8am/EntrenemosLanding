@@ -27,6 +27,8 @@ Las secciones anteriores de problema y solución quedaron unificadas en `#enfoqu
 
 El header no muestra el subtítulo “Entrenamiento conectado”.
 
+El acceso del header dice “Ingresar como entrenador” y apunta a `https://entrenemos.app/login`.
+
 ## Demo interactiva del hero
 
 La demo se implementa en `TrainingDemo.tsx` con HTML, CSS y estado local, sin autenticación, API, cookies ni almacenamiento persistente. Usa datos de ejemplo y permite:
@@ -82,6 +84,20 @@ El cierre es un único footer compacto: franja social, marca/contacto, navegaci�
 - Términos: `https://www.8am-dev.com/entrenemos/terms`
 - Soporte: `soporte@entrenemos.app`, con enlace y acción para copiar.
 
+Los botones de descarga muestran el símbolo de Apple y el triángulo multicolor de Google Play, con “Descargar desde” y el nombre de la tienda, siguiendo la referencia de `/athlete-only` de EntrenemosWeb. Conservan foco visible y una altura mínima de 56 px.
+
+Las entradas del hero y la confirmación de la demo duran entre 220 y 380 ms. Los botones de tiendas y etapas tienen feedback breve de hover y pulsación. Estas animaciones respetan `prefers-reduced-motion` y no son continuas.
+
+El correo y su botón para copiar viven en la barra inferior, después del copyright; en celular se distribuyen en varias líneas. El crédito visible es “Un producto de 8AM”.
+
+El carrusel usa flechas y cinco puntos seleccionables sobre las capturas. Las etapas se identifican con número y nombre junto al texto activo y con etiquetas accesibles en los puntos; se elimina la fila inferior duplicada. El rol aparece a la derecha del número y nombre de la etapa. El marco de imágenes y la reserva de espacio para todos los textos mantienen estables el ancho, la altura y los controles entre etapas. Las imágenes se cargan de forma diferida. Los celulares son más compactos, incluyendo la demo del hero, con adaptación a notebooks de poca altura. En pantallas de más de 980 px de ancho y hasta 850 px de alto, el panel del carrusel parte de 520 px de alto.
+
+El resumen cerrado de planes solo ofrece “Ver planes”, con feedback breve de hover y rotación de la flecha al desplegar. “Escribir a soporte” permanece dentro del contenido abierto y copia el correo; muestra “Mail de soporte copiado.” mediante un toast centrado en la parte inferior, anunciado al lector de pantalla y cerrado automáticamente después de 3,5 segundos. Si la copia falla, se informa el error y el correo disponible.
+
+El footer se renderiza en el servidor; solo el contacto con acción de copiar necesita estado cliente. Las variantes WebP de marca se usan en tamaños pequeños con dimensiones explícitas, conservando los PNG originales. Los errores de la demo se muestran junto a los campos y se asocian con `aria-describedby` y `aria-invalid`.
+
+Las entradas de scroll son una mejora progresiva: sin JavaScript el contenido permanece visible. Se eliminó el seguimiento luminoso heredado, que ya no tenía tarjetas asociadas en la landing actual. El scroll vertical usa colores de marca y restaura la apariencia del sistema en modo de colores forzados.
+
 ## Requisitos funcionales iniciales
 
 - Responsive desde 320 px.
@@ -106,6 +122,15 @@ El cierre es un único footer compacto: franja social, marca/contacto, navegaci�
 - Framework, hosting, CMS, formularios y analítica.
 
 ## Definición mínima de terminado
+
+### SEO implementado
+
+- Un H1 en la landing, H2 para las secciones y H3 para contenidos subordinados. El texto de la demo no se presenta como sección independiente.
+- Título y descripción públicos centralizados en `src/lib/marketing/site-config.ts`, con canonical de la home en `https://www.entrenemos.app/`.
+- `robots.txt` permite rastreo y enlaza `sitemap.xml`, que enumera solo la landing. `/login` y `/design-system` llevan `noindex`; no se bloquean por robots para que los buscadores puedan leer esa directiva.
+- Datos estructurados WebSite y Organization con nombre, URL, logo, soporte y perfil social documentados. No se agregan reseñas, precios ni métricas.
+- Favicon y Apple icon derivados de la marca; imagen social de 1200 × 630 px para Open Graph y Twitter.
+- Verificación local de rutas y metadata. La indexación y los resultados de búsqueda requieren publicación y revisión posterior en Search Console.
 
 - Mensaje comprensible en los primeros segundos.
 - CTA verificable de punta a punta.

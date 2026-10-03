@@ -36,6 +36,12 @@ La familia se eligió por su equilibrio entre una presencia tecnológica y empre
 
 ## Formas y profundidad
 
+### Escala tipográfica
+
+Los tokens `--font-size-hero`, `--font-size-section`, `--font-size-subsection` y `--font-size-feature-title` centralizan la jerarquía. El H1 del hero llega a 4,55 rem; los títulos H2 de secciones llegan a 3,25 rem. Visión y Planes usan la misma escala de sección. Los H3 de bloques usan escalas de subsección o de título destacado según su función. Los tamaños específicos de la demo y de navegación son excepciones de interfaz; los textos de la rutina no son encabezados de sección de la landing.
+
+En Visión, la bajada se alinea al centro vertical del título en escritorio. El manifiesto de Enfoque conserva su énfasis editorial mediante párrafos, sin alterar la jerarquía de encabezados.
+
 - Radios actuales: botones `10px`, inputs `12px`, paneles `14px`, cards `18px`, diálogos `20px` y bloques destacados `24px`.
 - Bordes sutiles blancos al 6–10%.
 - Sombras oscuras amplias y suaves.

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { FocusSection } from "@/lib/marketing/landing-types";
 
 interface Props {
@@ -65,7 +66,7 @@ export function LandingFocus({ section }: Props) {
 
         <article className="focus-connected reveal" aria-labelledby="connected-title">
           <div className="focus-product-mark">
-            <img src="/brand/logo-primary.png" alt="" />
+            <Image src="/brand/logo-primary.webp" alt="" width={96} height={96} sizes="96px" />
             <strong>Entrenemos</strong>
           </div>
 
@@ -96,11 +97,11 @@ export function LandingFocus({ section }: Props) {
       <footer className="focus-manifesto reveal">
         <div className="focus-manifesto-copy">
           <div className="focus-manifesto-topline">
-            <h3 className="focus-manifesto-sequence">
+            <p className="focus-manifesto-sequence">
               <span>{section.platformClaim}.</span>
               <span>{section.protagonistsClaim}.</span>
               <span>Un mismo objetivo.</span>
-            </h3>
+            </p>
 
             <p className="focus-manifesto-progress">{section.progressClaim}</p>
           </div>
@@ -117,7 +118,7 @@ export function LandingFocus({ section }: Props) {
         </div>
 
         <div className="focus-manifesto-signature" aria-label="Entrenemos">
-          <img src="/brand/logo-primary.png" alt="" />
+          <Image src="/brand/logo-primary.webp" alt="" width={96} height={96} sizes="96px" />
           <span>Entrenemos</span>
         </div>
       </footer>

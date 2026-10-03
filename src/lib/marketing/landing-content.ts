@@ -1,12 +1,9 @@
-﻿import type {
-  AudienceProfile,
+import type {
   FocusSection,
   FooterContent,
   LandingHeroSection,
   LandingLink,
   ScreensSection,
-  PlansSection,
-  VisionSection,
 } from "./landing-types";
 
 const navigation: LandingLink[] = [
@@ -39,53 +36,6 @@ const focus: FocusSection = {
   objectiveClaim: "Un mismo objetivo:",
   progressClaim: "progresar",
 };
-
-const audienceProfiles: AudienceProfile[] = [
-  {
-    id: "atleta",
-    trigger: "Sos atleta",
-    kicker: "Para atletas",
-    title: "Entrená con más claridad, registro y acompañamiento.",
-    description:
-      "La experiencia mobile acompaña el día a día del entrenamiento para que la rutina, el historial y el progreso tengan sentido juntos.",
-    points: [
-      {
-        title: "Rutina visible",
-        description: "Sabés qué toca hoy y cómo se conecta con tu objetivo.",
-      },
-      {
-        title: "Historial ordenado",
-        description: "Tu trabajo no se pierde; queda registrado y fácil de revisar.",
-      },
-      {
-        title: "Contexto compartido",
-        description: "Tu entrenador puede acompañarte con mejor información.",
-      },
-    ],
-  },
-  {
-    id: "entrenador",
-    trigger: "Sos entrenador",
-    kicker: "Para entrenadores",
-    title: "Organizá atletas, rutinas y seguimiento en un mismo sistema.",
-    description:
-      "La plataforma web ayuda a gestionar mejor el trabajo, personalizar el acompañamiento y leer el progreso sin depender de herramientas dispersas.",
-    points: [
-      {
-        title: "Gestión más ordenada",
-        description: "Rutinas, atletas y seguimiento viven en una misma base de trabajo.",
-      },
-      {
-        title: "Decisiones con contexto",
-        description: "El avance individual y grupal se entiende con más claridad.",
-      },
-      {
-        title: "Mejor vínculo de trabajo",
-        description: "La comunicación acompaña el proceso en vez de correr por afuera.",
-      },
-    ],
-  },
-];
 
 const screens: ScreensSection = {
   eyebrow: "Ecosistema",
@@ -181,107 +131,6 @@ const screens: ScreensSection = {
   ],
 };
 
-const vision: VisionSection = {
-  eyebrow: "Nuestra visión",
-  title: "Acompañar también es parte de entrenar.",
-  description:
-    "Un entrenador no solo prepara rutinas. También observa, escucha y busca entender qué necesita cada atleta para sostener su proceso. Entrenemos se encarga de organizar tu trabajo y establecer la comunicación optima para que entrenadores y atletas entrenen mejor.",
-  principles: [
-    {
-      label: "01 — Entender",
-      title: "Más que saber si entrenó",
-      description:
-        "Cada registro ayuda a comprender qué ocurrió durante la sesión: qué pudo completar el atleta, cómo se sintió y qué dificultades encontró.",
-    },
-    {
-      label: "02 — Acompañar",
-      title: "Información para estar presente",
-      description:
-        "El entrenador puede revisar el proceso, conversar directamente con el atleta y contar con más contexto para decidir cómo continuar.",
-    },
-    {
-      label: "03 — Sostener",
-      title: "Constancia que se construye",
-      description:
-        "El atleta puede registrar su recorrido, reconocer su continuidad y comprender que cada entrenamiento forma parte de un proceso más grande.",
-    },
-  ],
-  closing:
-    "Entrenemos convierte rutinas, registros, sensaciones y conversaciones en un proceso que atleta y entrenador pueden comprender y construir juntos.",
-  finalStatement:
-    "La experiencia y el criterio siguen siendo humanos. La tecnología les da un lugar donde trabajar mejor.",
-};
-
-const plans: PlansSection = {
-  eyebrow: "Planes mensuales",
-  title: "Planes mensuales para entrenadores.",
-  description: "Empezá gratis por 1 mes y elegí el plan según tu cantidad de alumnos.",
-  plans: [
-    {
-      name: "Básico",
-      price: "Gratis",
-      subtitle: "Gratis por 1 mes. Hasta 5 alumnos.",
-      features: [
-        "Para empezar sin barreras",
-        "Empezá con tu grupo inicial",
-        "Ideal para probar el servicio",
-      ],
-      actionLabel: "Empezar gratis",
-      actionHref: "#contacto",
-      highlight: true,
-    },
-    {
-      name: "Coach",
-      price: "$20.000",
-      subtitle: "Mensual. Hasta 25 alumnos.",
-      features: [
-        "Para entrenadores en crecimiento",
-        "Más espacio para tus alumnos",
-        "Orden para trabajar mejor",
-      ],
-      actionLabel: "Seleccionar plan",
-      actionHref: "#contacto",
-    },
-    {
-      name: "Pro",
-      price: "$35.000",
-      subtitle: "Mensual. Hasta 50 alumnos.",
-      features: [
-        "Para grupos más grandes",
-        "Seguimiento más amplio",
-        "Buen balance entre capacidad y valor",
-      ],
-      actionLabel: "Seleccionar plan",
-      actionHref: "#contacto",
-    },
-    {
-      name: "Elite",
-      price: "$60.000",
-      subtitle: "Mensual. Hasta 100 alumnos.",
-      features: [
-        "Para equipos grandes",
-        "Más capacidad de trabajo",
-        "Para entrenadores que crecen fuerte",
-      ],
-      actionLabel: "Seleccionar plan",
-      actionHref: "#contacto",
-    },
-    {
-      name: "Personalizado",
-      price: "Consultar",
-      subtitle: "Más de 100 alumnos.",
-      features: [
-        "Soporte prioritario",
-        "Límites a medida",
-        "Integración personalizada",
-      ],
-      actionLabel: "Contactar soporte",
-      actionHref: "mailto:soporte@entrenemos.app",
-      isContact: true,
-    },
-  ],
-};
-
 const finalCta = {
   eyebrow: "Planes para entrenadores",
   title: "Probá Entrenemos en tu asesoría.",
@@ -318,22 +167,13 @@ const footer: FooterContent = {
 export const landingContent = {
   brand: {
     name: "Entrenemos",
-    logoSrc: "/brand/logo-primary.png",
+    logoSrc: "/brand/logo-primary.webp",
   },
   navigation,
-  headerAction: { label: "Ir al login", href: "/login" },
+  headerAction: { label: "Ingresar como entrenador", href: "https://entrenemos.app/login" },
   hero,
   focus,
-  audience: {
-    eyebrow: "Atletas y entrenadores",
-    title: "Dos perspectivas distintas, un mismo proceso.",
-    description:
-      "Entrenemos trata el entrenamiento como una invitación compartida: claridad para quien entrena y mejor contexto para quien acompaña.",
-    profiles: audienceProfiles,
-  },
   screens,
-  vision,
-  plans,
   finalCta,
   footer,
 };

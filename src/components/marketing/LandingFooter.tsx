@@ -1,7 +1,5 @@
-"use client";
-
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { FooterContact } from "./FooterContact";
 import { BrandMark } from "@/components/ui/BrandMark";
 import type { FooterContent } from "@/lib/marketing/landing-types";
 
@@ -10,39 +8,6 @@ interface Props {
 }
 
 export function LandingFooter({ footer }: Props) {
-  const [copyState, setCopyState] = useState<"idle" | "copied" | "error">("idle");
-  const resetTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  useEffect(() => {
-    return () => {
-      if (resetTimer.current) clearTimeout(resetTimer.current);
-    };
-  }, []);
-
-  async function copyEmail() {
-    try {
-      if (navigator.clipboard?.writeText) {
-        await navigator.clipboard.writeText(footer.contact);
-      } else {
-        const input = document.createElement("textarea");
-        input.value = footer.contact;
-        input.style.position = "fixed";
-        input.style.opacity = "0";
-        document.body.appendChild(input);
-        input.select();
-        const copied = document.execCommand("copy");
-        input.remove();
-        if (!copied) throw new Error("copy-failed");
-      }
-      setCopyState("copied");
-    } catch {
-      setCopyState("error");
-    }
-
-    if (resetTimer.current) clearTimeout(resetTimer.current);
-    resetTimer.current = setTimeout(() => setCopyState("idle"), 2200);
-  }
-
   return (
     <footer className="footer">
       <div className="fat-footer">
@@ -78,29 +43,27 @@ export function LandingFooter({ footer }: Props) {
             <BrandMark className="fat-footer__brand-mark" />
             <p>{footer.description}</p>
 
-            <div className="fat-footer__contact">
-              <a href={"mailto:" + footer.contact}>{footer.contact}</a>
-              <button type="button" onClick={copyEmail} aria-label="Copiar correo de soporte">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <rect x="8" y="8" width="11" height="11" rx="2" />
-                  <path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" />
-                </svg>
-                <span>{copyState === "copied" ? "Copiado" : copyState === "error" ? "No se pudo copiar" : "Copiar"}</span>
-              </button>
-              <span className="fat-footer__copy-status" aria-live="polite">
-                {copyState === "copied" ? "Correo copiado al portapapeles." : copyState === "error" ? "No se pudo copiar el correo." : ""}
-              </span>
-            </div>
-
             <div className="fat-footer__downloads">
               <span>Descargá la app</span>
               <div>
                 {footer.appLinks.map((link) => (
-                  <a href={link.href} key={link.href} target="_blank" rel="noreferrer">
-                    {link.label}
-                    <svg viewBox="0 0 20 20" aria-hidden="true">
-                      <path d="M6 14 14 6M7 6h7v7" />
-                    </svg>
+                  <a href={link.href} key={link.href} target="_blank" rel="noopener noreferrer" aria-label={`Descargar Entrenemos desde ${link.label}`}>
+                    {link.label === "App Store" ? (
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill="currentColor" d="M17.05 12.54c.03 3.22 2.83 4.29 2.86 4.3-.02.08-.45 1.53-1.48 3.03-.89 1.3-1.81 2.59-3.27 2.62-1.43.03-1.89-.85-3.53-.85-1.63 0-2.14.82-3.49.88-1.41.05-2.49-1.41-3.39-2.7-1.85-2.66-3.26-7.52-1.36-10.8.94-1.63 2.62-2.66 4.44-2.69 1.39-.03 2.7.94 3.54.94.84 0 2.42-1.16 4.08-.99.7.03 2.66.28 3.92 2.13-.1.06-2.34 1.36-2.32 4.13ZM14.36 4.5c.75-.91 1.26-2.17 1.12-3.43-1.08.04-2.39.72-3.17 1.63-.7.81-1.31 2.1-1.15 3.34 1.2.09 2.44-.61 3.2-1.54Z" />
+                      </svg>
+                    ) : (
+                      <svg viewBox="0 0 24 26" aria-hidden="true">
+                        <path fill="#32BBFF" d="M1 1 14 13 1 25Z" />
+                        <path fill="#00D26A" d="m1 1 16 9-3 3Z" />
+                        <path fill="#FFCE00" d="m17 10 6 3-6 3-3-3Z" />
+                        <path fill="#FF4545" d="m1 25 13-12 3 3Z" />
+                      </svg>
+                    )}
+                    <span className="store-link__text">
+                      <small>Descargar desde</small>
+                      <strong>{link.label}</strong>
+                    </span>
                   </a>
                 ))}
               </div>
@@ -129,8 +92,9 @@ export function LandingFooter({ footer }: Props) {
 
         <div className="fat-footer__bottom">
           <span>© 2026 Entrenemos</span>
+          <FooterContact email={footer.contact} />
           <a href="https://www.8am-dev.com/" target="_blank" rel="noreferrer">
-            Un producto de 8AM Dev
+            Un producto de 8AM
           </a>
         </div>
       </div>

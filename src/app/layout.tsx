@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import { siteConfig } from "@/lib/marketing/site-config";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -9,43 +10,39 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta-sans",
 });
 
-const siteUrl = "https://www.entrenemos.app";
-const title = "Entrenemos";
-const description =
-  "Planificá, entrená y seguí el progreso con una experiencia conectada para atletas y entrenadores.";
+const siteUrl = siteConfig.url;
+const title = siteConfig.name;
+const description = siteConfig.description;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: title,
+    default: siteConfig.title,
     template: `%s | ${title}`,
   },
   description,
   applicationName: title,
-  alternates: {
-    canonical: siteUrl,
-  },
   openGraph: {
     type: "website",
     locale: "es_AR",
     url: siteUrl,
     siteName: title,
-    title,
+    title: siteConfig.title,
     description,
     images: [
       {
-        url: "/brand/logo-primary.png",
+        url: siteConfig.socialImage,
         width: 1200,
-        height: 1200,
-        alt: "Logo de Entrenemos",
+        height: 630,
+        alt: "Entrenemos: entrenamiento y progreso compartido entre atletas y entrenadores",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title,
+    title: siteConfig.title,
     description,
-    images: ["/brand/logo-primary.png"],
+    images: [siteConfig.socialImage],
   },
   robots: {
     index: true,

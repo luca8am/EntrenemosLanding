@@ -1,8 +1,22 @@
 * { box-sizing: border-box; }
 
 html {
+  overflow-x: clip;
+  scrollbar-color: #587c93 #101b22;
+  scrollbar-width: thin;
   scroll-behavior: smooth;
   scroll-padding-top: 104px;
+}
+
+@supports not (scrollbar-color: #587c93 #101b22) {
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { background: #101b22; }
+  ::-webkit-scrollbar-thumb { border: 2px solid #101b22; border-radius: 999px; background: #587c93; }
+  ::-webkit-scrollbar-thumb:hover { background: #7fa7bf; }
+}
+
+@media (forced-colors: active) {
+  html { scrollbar-color: auto; scrollbar-width: auto; }
 }
 
 body {

@@ -7,8 +7,12 @@ export function TopbarScrollEffect() {
     const topbar = document.getElementById("inicio") as HTMLElement | null;
     if (!topbar) return;
 
+    let wasScrolled: boolean | undefined;
     const onScroll = () => {
-      topbar.style.borderColor = window.scrollY > 20 ? "rgba(13,147,242,.28)" : "";
+      const isScrolled = window.scrollY > 20;
+      if (isScrolled === wasScrolled) return;
+      wasScrolled = isScrolled;
+      topbar.classList.toggle("is-scrolled", isScrolled);
     };
 
     onScroll();

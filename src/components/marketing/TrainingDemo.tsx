@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useReducer } from "react";
 import { Button } from "@/components/ui/Button";
 
@@ -10,6 +11,7 @@ interface DemoState {
   weight: string;
   reps: string;
   message: string;
+  error: string | null;
 }
 
 type DemoAction =
@@ -25,6 +27,7 @@ const initialState: DemoState = {
   weight: "",
   reps: "",
   message: "Demo lista. Comenzá el entrenamiento para probarla.",
+  error: null,
 };
 
 const exercises = [
@@ -40,14 +43,19 @@ function reducer(state: DemoState, action: DemoAction): DemoState {
     case "open-exercise":
       return { ...state, step: "exercise", message: "Press de banca abierto." };
     case "set-weight":
-      return { ...state, weight: action.value };
+      return { ...state, weight: action.value, error: null };
     case "set-reps":
-      return { ...state, reps: action.value };
+      return { ...state, reps: action.value, error: null };
     case "complete":
-      if (!state.weight || !state.reps) {
-        return { ...state, message: "Ingresá el peso y las repeticiones para completar la serie." };
+      if (
+        !state.weight || !state.reps ||
+        !Number.isFinite(Number(state.weight)) || Number(state.weight) < 0 ||
+        !Number.isInteger(Number(state.reps)) || Number(state.reps) < 1
+      ) {
+        const error = "Ingresá un peso válido y al menos una repetición entera para completar la serie.";
+        return { ...state, message: error, error };
       }
-      return { ...state, step: "completed", message: "Serie 1 completada." };
+      return { ...state, step: "completed", message: "Serie 1 completada.", error: null };
     case "reset":
       return initialState;
   }
@@ -55,7 +63,7 @@ function reducer(state: DemoState, action: DemoAction): DemoState {
 
 export function TrainingDemoTrigger({ label }: { label: string }) {
   const focusDemo = () => {
-    const target = document.getElementById("training-demo-start");
+    const target = document.getElementById("training-demo-start") ?? document.getElementById("training-demo");
     if (!target) return;
 
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -77,14 +85,14 @@ export function TrainingDemo() {
   const completed = state.step === "completed";
 
   return (
-    <div className="training-demo" aria-label="Demostración interactiva de Entrenemos">
+    <div id="training-demo" tabIndex={-1} className="training-demo" aria-label="Demostración interactiva de Entrenemos">
       <div className="demo-orbit" aria-hidden="true" />
       <div className="phone-shell">
         <div className="phone-speaker" aria-hidden="true" />
         <div className="phone-screen">
           <header className="demo-header">
             <div className="demo-brand">
-              <img src="/brand/logo-primary.png" alt="" />
+              <Image src="/brand/logo-primary.webp" alt="" width={26} height={26} sizes="26px" />
               <strong>Entrenemos</strong>
             </div>
             <span className="demo-label">Demo · datos de ejemplo</span>
@@ -94,7 +102,7 @@ export function TrainingDemo() {
             <div className="demo-routine">
               <div className="demo-routine-heading">
                 <span>Tu entrenamiento</span>
-                <h2>Día 1</h2>
+                <p className="demo-title">Día 1</p>
                 <p>Tren superior</p>
               </div>
 
@@ -126,7 +134,7 @@ export function TrainingDemo() {
               <div className="demo-session-heading">
                 <div>
                   <span>Sesión activa</span>
-                  <h2>Día 1 · Tren superior</h2>
+                  <p className="demo-title">Día 1 · Tren superior</p>
                 </div>
                 <strong>{completed ? "1" : "0"}/11</strong>
               </div>
@@ -174,6 +182,8 @@ export function TrainingDemo() {
                               <input
                                 inputMode="decimal"
                                 name="demo-weight"
+                                aria-invalid={state.error !== null && (!state.weight || !Number.isFinite(Number(state.weight)) || Number(state.weight) < 0)}
+                                aria-describedby={state.error ? "demo-input-error" : undefined}
                                 type="number"
                                 min="0"
                                 step="0.5"
@@ -188,6 +198,8 @@ export function TrainingDemo() {
                               <input
                                 inputMode="numeric"
                                 name="demo-reps"
+                                aria-invalid={state.error !== null && (!state.reps || !Number.isInteger(Number(state.reps)) || Number(state.reps) < 1)}
+                                aria-describedby={state.error ? "demo-input-error" : undefined}
                                 type="number"
                                 min="1"
                                 step="1"
@@ -206,6 +218,7 @@ export function TrainingDemo() {
                               {completed ? "Completada" : "Completar"}
                             </button>
                           </div>
+                          {state.error ? <p className="demo-input-error" id="demo-input-error">{state.error}</p> : null}
                         </div>
                       )}
                     </div>
@@ -224,7 +237,6 @@ export function TrainingDemo() {
                 className="demo-reset"
                 type="button"
                 onClick={() => dispatch({ type: "reset" })}
-                disabled={!completed}
               >
                 Reiniciar demo
               </button>

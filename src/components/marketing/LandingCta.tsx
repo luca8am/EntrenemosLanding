@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { Button, ButtonLink } from "@/components/ui/Button";
+import { Button } from "@/components/ui/Button";
+import { SupportCopyButton } from "./SupportCopyButton";
 
 interface Props {
   section: {
@@ -54,12 +55,6 @@ export function LandingCta({ section }: Props) {
                 <path d="m5 7.5 5 5 5-5" />
               </svg>
             </Button>
-
-            {!isExpanded && (
-              <ButtonLink variant="tertiary" href={section.secondaryAction.href}>
-                {section.secondaryAction.label}
-              </ButtonLink>
-            )}
           </div>
         </div>
 
@@ -110,9 +105,7 @@ export function LandingCta({ section }: Props) {
 
             <div className="plans-cta__contact">
               <p>¿Querés conversar sobre la capacidad que necesitás?</p>
-              <ButtonLink variant="secondary" href={section.secondaryAction.href}>
-                {section.secondaryAction.label}
-              </ButtonLink>
+              <SupportCopyButton email={section.secondaryAction.href.replace(/^mailto:/, "")} label={section.secondaryAction.label} />
             </div>
           </div>
         </div>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BrandMark } from "@/components/ui/BrandMark";
@@ -171,11 +172,11 @@ export default function DesignSystemPage() {
 
           <div className={styles.logoStage}>
             <div className={styles.primaryLogo}>
-              <img src="/brand/logo-primary.png" alt="Símbolo azul de Entrenemos" />
+              <img src="/brand/logo-primary.webp" alt="Símbolo azul de Entrenemos" />
               <div><span>Uso principal</span><strong>Identidad digital</strong><p>La variante azul conecta la marca con el producto y las acciones principales.</p></div>
             </div>
             <div className={styles.secondaryLogo}>
-              <img src="/brand/logo-secondary.png" alt="Símbolo humano de Entrenemos" />
+              <img src="/brand/logo-secondary.webp" alt="Símbolo humano de Entrenemos" />
               <div><span>Uso contextual</span><strong>Narrativa humana</strong><p>Reservada para piezas donde la diversidad y el vínculo sean el centro del mensaje.</p></div>
             </div>
           </div>
@@ -198,7 +199,7 @@ export default function DesignSystemPage() {
       </main>
 
       <footer className={styles.footer}>
-        <div><img src="/brand/logo-primary.png" alt="" /><strong>Entrenemos</strong></div>
+        <div><Image src="/brand/logo-primary.webp" alt="" width={96} height={96} sizes="96px" /><strong>Entrenemos</strong></div>
         <p>Una referencia compartida para que cada pantalla se sienta parte del mismo proceso.</p>
         <Link href="/">Volver a la landing</Link>
       </footer>

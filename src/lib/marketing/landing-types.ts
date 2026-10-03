@@ -25,22 +25,6 @@ export interface FocusSection {
   progressClaim: string;
 }
 
-export interface LandingCard {
-  title: string;
-  description: string;
-  label?: string;
-  tone?: "default" | "accent";
-}
-
-export interface AudienceProfile {
-  id: "atleta" | "entrenador";
-  trigger: string;
-  kicker: string;
-  title: string;
-  description: string;
-  points: LandingCard[];
-}
-
 export interface ScreensSection {
   eyebrow: string;
   title: string;
@@ -67,20 +51,6 @@ export interface EcosystemSlide {
 }
 
 
-export interface VisionPrinciple {
-  label: string;
-  title: string;
-  description: string;
-}
-
-export interface VisionSection {
-  eyebrow: string;
-  title: string;
-  description: string;
-  principles: VisionPrinciple[];
-  closing: string;
-  finalStatement: string;
-}
 export interface FooterContent {
   description: string;
   links: LandingLink[];
@@ -89,23 +59,4 @@ export interface FooterContent {
   instagram: LandingLink;
   appLinks: LandingLink[];
 }
-
-export interface PricingPlan {
-  name: string;
-  price: string;
-  subtitle: string;
-  features: string[];
-  actionLabel: string;
-  actionHref: string;
-  highlight?: boolean;
-  isContact?: boolean;
-}
-
-export interface PlansSection {
-  eyebrow: string;
-  title: string;
-  description: string;
-  plans: PricingPlan[];
-}
-
 
