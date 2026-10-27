@@ -13,6 +13,10 @@ interface Props {
 }
 
 export function LandingHeader({ brand, navigation, primaryAction }: Props) {
+  // En mobile chico el texto se parte antes de la última palabra y el botón se
+  // ajusta a esa línea (ver .topbar-action-label en marketing.css).
+  const breakAt = primaryAction.label.lastIndexOf(" ");
+
   return (
     <header className="topbar" id="inicio">
       <BrandMark className="brand" href="#inicio" logoSrc={brand.logoSrc} name={brand.name} />
@@ -26,7 +30,14 @@ export function LandingHeader({ brand, navigation, primaryAction }: Props) {
       </nav>
 
       <ButtonLink variant="secondary" href={primaryAction.href}>
-        {primaryAction.label}
+        {breakAt > 0 ? (
+          <span className="topbar-action-label">
+            <span>{primaryAction.label.slice(0, breakAt)}</span>{" "}
+            <span>{primaryAction.label.slice(breakAt + 1)}</span>
+          </span>
+        ) : (
+          primaryAction.label
+        )}
       </ButtonLink>
     </header>
   );
