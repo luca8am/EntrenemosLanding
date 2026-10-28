@@ -1515,6 +1515,11 @@ p {
   letter-spacing: 0.01em;
 }
 
+/* "entrenadores y atletas" siempre juntos en el mismo renglón. */
+.focus-manifesto-audience {
+  white-space: nowrap;
+}
+
 .focus-manifesto-definition strong {
   color: #e9f6fc;
   font: inherit;
@@ -1592,7 +1597,6 @@ p {
 
   .focus-manifesto-positioning {
     margin-top: 42px;
-    text-align: left;
   }
 
 }
@@ -1696,7 +1700,7 @@ p {
   }
 
   .focus-manifesto-signature {
-    align-self: flex-start;
+    align-self: center;
     gap: 12px;
     margin-top: 26px;
     font-size: 0.98rem;
@@ -2102,6 +2106,26 @@ p {
 
 .ecosystem-independent-note__store:active {
   transform: scale(0.96);
+}
+
+/* Variante chica debajo de la demo del hero. */
+.hero-stores {
+  justify-content: center;
+  gap: 10px;
+  margin-top: 22px;
+  /* Acerca un poco la sección siguiente, cuyo padding-top es el del resto de secciones. */
+  margin-bottom: -5px;
+}
+
+.hero-stores .ecosystem-independent-note__store {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+}
+
+.hero-stores .ecosystem-independent-note__store svg {
+  width: 21px;
+  height: 22px;
 }
 
 .ecosystem + .vision-system {

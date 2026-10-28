@@ -51,7 +51,7 @@ export default function HomePage() {
         primaryAction={landingContent.headerAction}
       />
       <main>
-        <LandingHero section={landingContent.hero} />
+        <LandingHero section={landingContent.hero} appLinks={landingContent.footer.appLinks} />
         <LandingFocus section={landingContent.focus} />
         <LandingScreens section={landingContent.screens} appLinks={landingContent.footer.appLinks} />
         <LandingVision />

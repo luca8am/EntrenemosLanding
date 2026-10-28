@@ -1,11 +1,13 @@
-import type { LandingHeroSection } from "@/lib/marketing/landing-types";
+import type { LandingHeroSection, LandingLink } from "@/lib/marketing/landing-types";
+import { AppStoreLinks } from "./AppStoreLinks";
 import { TrainingDemo, TrainingDemoTrigger } from "./TrainingDemo";
 
 interface Props {
   section: LandingHeroSection;
+  appLinks: LandingLink[];
 }
 
-export function LandingHero({ section }: Props) {
+export function LandingHero({ section, appLinks }: Props) {
   return (
     <section className="section hero" aria-labelledby="hero-title">
       <div className="hero-copy">
@@ -19,6 +21,7 @@ export function LandingHero({ section }: Props) {
 
       <div className="hero-visual">
         <TrainingDemo />
+        <AppStoreLinks appLinks={appLinks} className="hero-stores" />
       </div>
     </section>
   );

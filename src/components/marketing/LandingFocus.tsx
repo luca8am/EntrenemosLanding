@@ -120,7 +120,10 @@ export function LandingFocus({ section }: Props) {
             </p>
 
             <p className="focus-manifesto-definition">
-              {section.manifestoLead} <strong>{section.trainersLabel}</strong> y <strong>{section.athletesLabel}</strong>.
+              {section.manifestoLead}{" "}
+              <span className="focus-manifesto-audience">
+                <strong>{section.trainersLabel}</strong> y <strong>{section.athletesLabel}</strong>.
+              </span>
             </p>
           </div>
         </div>
