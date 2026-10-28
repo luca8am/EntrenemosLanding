@@ -19,6 +19,11 @@
   z-index: 1;
 }
 
+/* Las tiendas bajo la demo ya cierran el hero: la primera sección necesita menos aire. */
+.hero + .section {
+  padding-top: calc(var(--section-space) - 24px);
+}
+
 .section-heading {
   max-width: 760px;
   margin-bottom: 28px;
@@ -338,6 +343,10 @@ p {
 
   .section {
     padding-top: 84px;
+  }
+
+  .hero + .section {
+    padding-top: 64px;
   }
 }
 
@@ -2113,8 +2122,6 @@ p {
   justify-content: center;
   gap: 10px;
   margin-top: 22px;
-  /* Acerca un poco la sección siguiente, cuyo padding-top es el del resto de secciones. */
-  margin-bottom: -5px;
 }
 
 .hero-stores .ecosystem-independent-note__store {
