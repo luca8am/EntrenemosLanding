@@ -32,7 +32,9 @@ La implementación está pensada para que luego sea fácil:
 - `/design-system`: referencia viva de tokens, tipografía y componentes reales.
 - `/login`: página local informativa, excluida de indexación. El acceso para entrenadores dirige a `https://entrenemos.app/login`.
 
-El cierre comercial ofrece una prueba informativa de 15 días para hasta 5 alumnos y presenta Coach, Plus y Pro según capacidad. Los precios, pagos y contratación siguen fuera de alcance hasta contar con definiciones comerciales y destinos reales.
+El cierre comercial ofrece una prueba informativa de 30 días para hasta 5 alumnos y presenta Coach, Plus y Pro según capacidad. Los precios aprobados son $50.000, $80.000 y $125.000 para Argentina; USD 30, USD 50 y USD 80 para otros países. La periodicidad, los pagos y la contratación siguen pendientes de definición.
+
+La moneda se detecta mediante `/api/pricing-region`, que lee el país de la conexión informado por Vercel (`x-vercel-ip-country`). La home conserva su renderizado estático; la respuesta de moneda no se almacena en caché. Sin país disponible (incluido desarrollo local) o si falla la consulta, se muestran dólares. El selector permite cambiar entre ARS y USD y tiene prioridad sobre una detección tardía. No se consulta ningún servicio externo de geolocalización ni se pide ubicación al navegador. Para verificar Argentina en local, enviar `x-vercel-ip-country: AR` al endpoint o usar el selector.
 
 ## Criterios de portabilidad
 

@@ -3102,6 +3102,52 @@ p {
   font-weight: 680;
 }
 
+.plans-cta__currency {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px 24px;
+  margin: 28px clamp(28px, 4.4vw, 58px) 0;
+}
+
+.plans-cta__currency p {
+  flex: 1 1 240px;
+  margin: 0;
+  color: #b9ccd8;
+  font-size: 0.88rem;
+}
+
+.plans-cta__currency label {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  color: #eef9ff;
+  font-size: 0.88rem;
+}
+
+.plans-cta__currency select {
+  max-width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-control);
+  color: var(--color-text-primary);
+  background: var(--color-bg-surface);
+  font: inherit;
+  cursor: pointer;
+}
+
+.plans-cta__currency select:hover {
+  border-color: var(--color-action-primary);
+}
+
+.plans-cta__currency select:focus-visible {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 3px;
+}
+
 .plans-cta__plans {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -3150,6 +3196,15 @@ p {
   margin: 0;
   color: #a9bfcd;
   font-size: 0.91rem;
+}
+
+.plans-cta__plan .plans-cta__price {
+  margin: 0 0 18px;
+  color: var(--color-text-primary);
+  font-size: clamp(1.65rem, 2.6vw, 2.2rem);
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+  font-variant-numeric: tabular-nums;
 }
 
 .plans-cta__contact {
@@ -3234,6 +3289,10 @@ p {
   .plans-cta__plans {
     grid-template-columns: 1fr;
     margin: 14px 20px 0;
+  }
+
+  .plans-cta__currency {
+    margin: 24px 20px 0;
   }
 
   .plans-cta__plans li:last-child {

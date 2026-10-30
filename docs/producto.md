@@ -61,13 +61,13 @@ Es una dirección de copy, no un eslogan aprobado. El nombre “Entrenemos” fu
 
 ## Oferta pública para entrenadores
 
-La landing comunica una prueba gratuita de 15 días para gestionar hasta 5 alumnos con todas las funciones disponibles. Después presenta tres capacidades, sin diferencias funcionales entre ellas:
+La landing comunica una prueba gratuita de 30 días para gestionar hasta 5 alumnos con todas las funciones disponibles. Después presenta tres capacidades, sin diferencias funcionales entre ellas:
 
-- Coach: hasta 15 alumnos.
-- Plus: hasta 25 alumnos.
-- Pro: hasta 50 alumnos.
+- Coach: hasta 15 alumnos; $50.000 ARS en Argentina o USD 30 en otros países.
+- Plus: hasta 30 alumnos; $80.000 ARS en Argentina o USD 50 en otros países.
+- Pro: hasta 50 alumnos; $125.000 ARS en Argentina o USD 80 en otros países.
 
-Los precios, medios de pago, condiciones de renovación y flujo de contratación todavía no están definidos y no deben inferirse ni publicarse. Mientras no exista un destino real para comenzar la prueba, la oferta es informativa y el contacto disponible es soporte.
+Los precios fueron aprobados el 30 de octubre de 2026. La moneda se detecta por país de conexión y puede cambiarse manualmente; sin detección se usa USD. La periodicidad, los medios de pago, las condiciones de renovación y el flujo de contratación todavía no están definidos y no deben inferirse ni publicarse. Mientras no exista un destino real para comenzar la prueba, la oferta es informativa y el contacto disponible es soporte.
 
 ## Canales públicos confirmados
 

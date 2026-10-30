@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/Button";
+import { formatPlanPrice, trainerPlans, type PricingCurrency } from "@/lib/marketing/pricing";
 import { SupportCopyButton } from "./SupportCopyButton";
 
 interface Props {
@@ -13,15 +14,37 @@ interface Props {
   };
 }
 
-const plans = [
-  { name: "Coach", capacity: "Hasta 15 alumnos", segments: 3 },
-  { name: "Plus", capacity: "Hasta 25 alumnos", segments: 5 },
-  { name: "Pro", capacity: "Hasta 50 alumnos", segments: 10 },
-] as const;
-
 export function LandingCta({ section }: Props) {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [selectedCurrency, setSelectedCurrency] = useState<PricingCurrency | null>(null);
+  const currency = selectedCurrency ?? "USD";
   const detailsId = "trainer-plans-details";
+
+  useEffect(() => {
+    const controller = new AbortController();
+
+    async function detectCurrency() {
+      try {
+        const response = await fetch("/api/pricing-region", {
+          cache: "no-store",
+          signal: controller.signal,
+        });
+        if (!response.ok) return;
+
+        const data: { currency?: unknown } = await response.json();
+        const detectedCurrency = data.currency;
+        if (!controller.signal.aborted && (detectedCurrency === "ARS" || detectedCurrency === "USD")) {
+          // A manual selection takes priority even if detection finishes later.
+          setSelectedCurrency((current) => current ?? detectedCurrency);
+        }
+      } catch {
+        // Keep USD and the manual selector available when detection fails.
+      }
+    }
+
+    void detectCurrency();
+    return () => controller.abort();
+  }, []);
 
   return (
     <section className="section" id="planes-entrenadores" aria-labelledby="final-cta-title">
@@ -38,7 +61,7 @@ export function LandingCta({ section }: Props) {
             <div aria-hidden="true">
               <strong>5</strong><i />
               <strong>15</strong><i />
-              <strong>25</strong><i />
+              <strong>30</strong><i />
               <strong>50</strong>
             </div>
           </div>
@@ -76,21 +99,39 @@ export function LandingCta({ section }: Props) {
             <article className="plans-cta__trial">
               <div>
                 <span>Prueba gratuita</span>
-                <h3>15 días para probar Entrenemos en tu trabajo real.</h3>
+                <h3>30 días para probar Entrenemos en tu trabajo real.</h3>
               </div>
               <ul>
                 <li>Hasta 5 alumnos</li>
                 <li>Acceso a todas las funciones</li>
-                <li>Durante 15 días</li>
+                <li>Durante 30 días</li>
               </ul>
             </article>
 
-            <ul className="plans-cta__plans" aria-label="Planes para entrenadores">
-              {plans.map((plan) => (
+            <div className="plans-cta__currency">
+              <p>Precios en pesos para Argentina y en dólares para otros países.</p>
+              <label htmlFor="plans-currency">
+                Moneda
+                <select
+                  id="plans-currency"
+                  value={currency}
+                  onChange={(event) => setSelectedCurrency(event.target.value as PricingCurrency)}
+                >
+                  <option value="ARS">Pesos argentinos (ARS)</option>
+                  <option value="USD">Dólares (USD)</option>
+                </select>
+              </label>
+            </div>
+
+            <ul className="plans-cta__plans" aria-label="Planes para entrenadores" aria-live="polite" aria-atomic="true">
+              {trainerPlans.map((plan) => (
                 <li key={plan.name}>
                   <article className="plans-cta__plan">
                     <span>Plan</span>
                     <h3>{plan.name}</h3>
+                    <p className="plans-cta__price">
+                      <strong>{formatPlanPrice(plan.prices[currency], currency)}</strong>
+                    </p>
                     <strong>{plan.capacity}</strong>
                     <div className="plans-cta__segments" aria-hidden="true">
                       {Array.from({ length: plan.segments }, (_, index) => (

@@ -74,12 +74,14 @@ Las dos curvas del infinito son simétricas y comparten el centro exacto de sus 
 
 La tarjeta `#planes-entrenadores` se muestra cerrada al cargar y revela su contenido mediante un botón accesible con `aria-expanded` y `aria-controls`.
 
-- Prueba gratuita: 15 días, hasta 5 alumnos y acceso a todas las funciones.
-- Coach: hasta 15 alumnos.
-- Plus: hasta 25 alumnos.
-- Pro: hasta 50 alumnos.
+- Prueba gratuita: 30 días, hasta 5 alumnos y acceso a todas las funciones.
+- Coach: hasta 15 alumnos. Argentina: $50.000 ARS. Otros países: USD 30.
+- Plus (plan intermedio): hasta 30 alumnos. Argentina: $80.000 ARS. Otros países: USD 50.
+- Pro: hasta 50 alumnos. Argentina: $125.000 ARS. Otros países: USD 80.
 
-Los tres planes pagos incluyen las mismas funciones; solamente cambia la cantidad máxima de alumnos. No se muestran precios, checkout ni botones de contratación hasta que existan definiciones y destinos reales.
+Los tres planes pagos incluyen las mismas funciones; solamente cambia la cantidad máxima de alumnos. Precios aprobados el 30 de octubre de 2026. No se indica periodicidad hasta confirmarla ni se agregan checkout o botones de contratación sin destinos reales.
+
+La moneda se elige según el país de la conexión informado por Vercel: ARS para Argentina y USD para el resto. Un selector accesible permite cambiarla manualmente. Si no se puede detectar el país o falla la consulta, se muestran dólares. No se infiere el país desde el idioma o la zona horaria del navegador. Los precios viven en `src/lib/marketing/pricing.ts`; `/api/pricing-region` responde sin caché para evitar compartir la moneda entre visitantes.
 
 ## Footer y destinos públicos
 
@@ -124,7 +126,7 @@ Las entradas de scroll son una mejora progresiva: sin JavaScript el contenido pe
 - Audiencia primaria de la primera versión: atletas, entrenadores o ambas.
 - Destino definitivo del CTA principal del hero.
 - Verificación periódica de disponibilidad de las URLs de las tiendas.
-- Precios, medios de pago, checkout y flujo real para iniciar la prueba gratuita.
+- Periodicidad de los precios, medios de pago, checkout y flujo real para iniciar la prueba gratuita.
 - Capturas aprobadas y datos que deban ocultarse.
 - Testimonios, métricas y logos de clientes reales.
 - Conexión del subdominio aprobado en Vercel y DNS; integración futura de `/landing` en EntrenemosWeb fuera del alcance actual.

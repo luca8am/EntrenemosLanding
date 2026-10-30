@@ -137,7 +137,7 @@ const finalCta = {
   eyebrow: "Planes para entrenadores",
   title: "Probá Entrenemos en tu asesoría.",
   description:
-    "Empezá con 15 días gratis para gestionar hasta 5 alumnos. Después, elegí el plan que acompañe el tamaño de tu equipo.",
+    "Empezá con 30 días gratis para gestionar hasta 5 alumnos. Después, elegí el plan que acompañe el tamaño de tu equipo.",
   secondaryAction: { label: "Escribir a soporte", href: "mailto:soporte@entrenemos.app" },
 };
 
